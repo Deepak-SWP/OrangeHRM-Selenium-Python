@@ -6,7 +6,7 @@ from utils.config import USERNAME, PASSWORD
 
 from pages.login_page import LoginPage
 
-from pages.employee_page import EmployeePage
+from pages.add_employee_page import EmployeePage
 
 
 @given('admin is logged into OrangeHRM')
