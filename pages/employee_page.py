@@ -73,11 +73,23 @@ class EmployeePage:
 
     def click_save(self):
 
+    # Wait for loader to disappear
         self.wait.until(
+            EC.invisibility_of_element_located(
+                (By.CLASS_NAME, "oxd-form-loader")
+            )
+        )
+
+        save_btn = self.wait.until(
             EC.element_to_be_clickable(
                 self.save_button
             )
-        ).click()
+        )
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            save_btn
+        )
 
     def verify_employee_added(self):
 
