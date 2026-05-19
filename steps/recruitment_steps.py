@@ -9,7 +9,7 @@ from pages.login_page import LoginPage
 from pages.recruitment_page import RecruitmentPage
 
 
-@given('admin logged into OrangeHRM application')
+@given('admin logged into recruitment page')
 def step_impl(context):
 
     context.driver = get_driver()
