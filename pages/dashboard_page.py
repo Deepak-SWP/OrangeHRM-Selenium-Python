@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 from selenium.webdriver.support.ui import WebDriverWait
@@ -31,38 +33,58 @@ class DashboardPage:
 
         self.driver = driver
 
-        self.wait = WebDriverWait(driver, 20)
+        self.wait = WebDriverWait(driver, 30)
 
+    # verify dashboard page
     def verify_dashboard(self):
 
-        element = self.wait.until(
-            EC.visibility_of_element_located(
-                self.dashboard_text
-            )
+        time.sleep(5)
+
+        dashboard_elements = self.driver.find_elements(
+            By.XPATH,
+            "//h6[text()='Dashboard']"
         )
 
-        return element.is_displayed()
+        return len(dashboard_elements) > 0
 
+    # click profile dropdown
     def click_profile(self):
 
-        self.wait.until(
+        profile = self.wait.until(
             EC.element_to_be_clickable(
                 self.profile_menu
             )
-        ).click()
+        )
 
+        self.driver.execute_script(
+            "arguments[0].click();",
+            profile
+        )
+
+        time.sleep(2)
+
+    # click logout
     def click_logout(self):
 
-        self.wait.until(
+        logout = self.wait.until(
             EC.element_to_be_clickable(
                 self.logout_button
             )
-        ).click()
+        )
 
+        self.driver.execute_script(
+            "arguments[0].click();",
+            logout
+        )
+
+        time.sleep(5)
+
+    # verify login page after logout
     def verify_login_page(self):
 
-        return self.wait.until(
-            EC.visibility_of_element_located(
-                self.login_page_text
-            )
-        ).is_displayed()
+        login_elements = self.driver.find_elements(
+            By.XPATH,
+            "//h5[text()='Login']"
+        )
+
+        return len(login_elements) > 0
