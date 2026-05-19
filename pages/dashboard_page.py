@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
+
 from selenium.webdriver.support.ui import WebDriverWait
+
 from selenium.webdriver.support import expected_conditions as EC
 
 
@@ -7,7 +9,7 @@ class DashboardPage:
 
     dashboard_text = (
         By.XPATH,
-        "//h6"
+        "//h6[text()='Dashboard']"
     )
 
     profile_menu = (
