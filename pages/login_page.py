@@ -1,6 +1,9 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 from utils.config import URL
 
 
@@ -45,33 +48,48 @@ class LoginPage:
 
         self.driver = driver
 
+        self.wait = WebDriverWait(driver, 30)
+
     def open(self):
 
         self.driver.get(URL)
 
     def login(self, uname, pwd):
 
-        wait = WebDriverWait(self.driver, 10)
-
-        wait.until(
+        username = self.wait.until(
             EC.visibility_of_element_located(
                 self.username
             )
-        ).send_keys(uname)
+        )
 
-        self.driver.find_element(
-            *self.password
-        ).send_keys(pwd)
+        password = self.wait.until(
+            EC.visibility_of_element_located(
+                self.password
+            )
+        )
 
-        self.driver.find_element(
-            *self.login_btn
-        ).click()
+        username.clear()
+        username.send_keys(uname)
+
+        password.clear()
+        password.send_keys(pwd)
+
+        login_button = self.wait.until(
+            EC.element_to_be_clickable(
+                self.login_btn
+            )
+        )
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            login_button
+        )
+
+        time.sleep(8)
 
     def verify_invalid_login(self):
 
-        wait = WebDriverWait(self.driver, 20)
-
-        return wait.until(
+        return self.wait.until(
             EC.visibility_of_element_located(
                 self.invalid_message
             )
@@ -79,19 +97,22 @@ class LoginPage:
 
     def click_forgot_password(self):
 
-        wait = WebDriverWait(self.driver, 20)
-
-        wait.until(
+        forgot = self.wait.until(
             EC.element_to_be_clickable(
                 self.forgot_password_link
             )
-        ).click()
+        )
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            forgot
+        )
+
+        time.sleep(3)
 
     def enter_forgot_username(self):
 
-        wait = WebDriverWait(self.driver, 20)
-
-        wait.until(
+        self.wait.until(
             EC.visibility_of_element_located(
                 self.forgot_username
             )
@@ -99,13 +120,19 @@ class LoginPage:
 
     def click_reset_password(self):
 
-        wait = WebDriverWait(self.driver, 20)
-
-        wait.until(
+        reset_btn = self.wait.until(
             EC.element_to_be_clickable(
                 self.reset_password_button
             )
-        ).click()
+        )
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            reset_btn
+        )
+
+        time.sleep(5)
 
     def verify_reset_message(self):
+
         return "requestResetPassword" in self.driver.current_url

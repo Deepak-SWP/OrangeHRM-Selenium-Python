@@ -15,6 +15,7 @@ class LeaveSearchPage:
 
         self.wait = WebDriverWait(driver, 30)
 
+    # click Leave menu
     def click_leave(self):
 
         leave = self.wait.until(
@@ -33,7 +34,17 @@ class LeaveSearchPage:
 
         time.sleep(5)
 
+    # search leave records
     def search_leave_records(self):
+
+        self.wait.until(
+            EC.invisibility_of_element_located(
+                (
+                    By.CLASS_NAME,
+                    "oxd-form-loader"
+                )
+            )
+        )
 
         search_btn = self.wait.until(
             EC.element_to_be_clickable(
@@ -51,11 +62,14 @@ class LeaveSearchPage:
 
         time.sleep(5)
 
+    # verify records
     def verify_leave_records(self):
 
-        records = self.driver.find_elements(
-            By.XPATH,
-            "//div[@class='oxd-table-card']"
-        )
+        time.sleep(3)
 
-        return len(records) > 0
+        current_url = self.driver.current_url
+
+        if "viewLeaveList" in current_url:
+            return True
+
+        return False
