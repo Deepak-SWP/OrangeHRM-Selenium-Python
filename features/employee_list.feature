@@ -1,3 +1,5 @@
+@regression
+
 Feature: Employee List Functionality
 
   Scenario: View Employee List

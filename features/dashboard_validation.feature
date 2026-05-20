@@ -1,3 +1,6 @@
+@smoke
+@regression
+
 Feature: Dashboard Validation
 
   Scenario: Verify Dashboard Page

@@ -1,3 +1,5 @@
+@regression
+
 Feature: Search Employee Functionality
 
   Scenario: Search Added Employee

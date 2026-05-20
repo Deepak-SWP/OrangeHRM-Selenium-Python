@@ -1,3 +1,5 @@
+@regression
+
 Feature: Add Employee Functionality
 
   Scenario: Add Employee Successfully

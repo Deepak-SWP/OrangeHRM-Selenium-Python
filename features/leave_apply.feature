@@ -1,3 +1,5 @@
+@regression
+
 Feature: Leave Module
 
   Scenario: Open Leave Module

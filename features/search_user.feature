@@ -1,3 +1,5 @@
+@regression
+
 Feature: Search User Functionality
 
   Scenario: Search Existing User

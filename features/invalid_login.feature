@@ -1,3 +1,6 @@
+@smoke
+@regression
+
 Feature: Invalid Login Functionality
 
 Scenario: Invalid Login Validation

@@ -1,3 +1,5 @@
+@smoke
+@regression
 Feature: Forgot Password Functionality
 
 Scenario: Reset Password Successfully
