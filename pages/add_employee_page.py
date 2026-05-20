@@ -14,7 +14,7 @@ class EmployeePage:
 
     add_employee_btn = (
         By.XPATH,
-        "//a[text()='Add Employee']"
+        "//a[normalize-space()='Add Employee']"
     )
 
     first_name = (
@@ -53,27 +53,43 @@ class EmployeePage:
 
     def click_add_employee(self):
 
-        self.wait.until(
+        add_btn = self.wait.until(
             EC.element_to_be_clickable(
                 self.add_employee_btn
             )
-        ).click()
+        )
+
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView();",
+            add_btn
+        )
+
+        add_btn.click()
 
     def enter_employee_details(self):
 
-        self.wait.until(
-            EC.visibility_of_element_located(
+        first_name_input = self.wait.until(
+            EC.element_to_be_clickable(
                 self.first_name
             )
-        ).send_keys("Deepak")
+        )
 
-        self.driver.find_element(
-            *self.last_name
-        ).send_keys("Kumar")
+        first_name_input.clear()
+
+        first_name_input.send_keys("Deepak")
+
+        last_name_input = self.wait.until(
+            EC.element_to_be_clickable(
+                self.last_name
+            )
+        )
+
+        last_name_input.clear()
+
+        last_name_input.send_keys("Kumar")
 
     def click_save(self):
 
-    # Wait for loader to disappear
         self.wait.until(
             EC.invisibility_of_element_located(
                 (By.CLASS_NAME, "oxd-form-loader")

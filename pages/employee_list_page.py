@@ -53,6 +53,15 @@ class EmployeeListPage:
 
     def verify_employee_records(self):
 
+        self.wait.until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    "//div[@class='oxd-table-card']"
+                )
+            )
+        )
+
         records = self.driver.find_elements(
             By.XPATH,
             "//div[@class='oxd-table-card']"

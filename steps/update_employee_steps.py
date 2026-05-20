@@ -1,3 +1,4 @@
+import allure
 from behave import *
 
 from utils.driver_setup import get_driver
@@ -9,6 +10,8 @@ from pages.login_page import LoginPage
 from pages.update_employee_page import UpdateEmployeePage
 
 
+@allure.feature("PIM Module")
+@allure.story("Update Employee Details")
 @given('admin logged into OrangeHRM system')
 def step_impl(context):
 
@@ -23,6 +26,8 @@ def step_impl(context):
     login.login(USERNAME, PASSWORD)
 
 
+@allure.feature("PIM Module")
+@allure.story("Update Employee Details")
 @when('admin opens PIM module for update')
 def step_impl(context):
 
@@ -33,24 +38,32 @@ def step_impl(context):
     context.update.click_pim()
 
 
+@allure.feature("PIM Module")
+@allure.story("Update Employee Details")
 @when('admin opens employee record')
 def step_impl(context):
 
     context.update.open_employee_record()
 
 
+@allure.feature("PIM Module")
+@allure.story("Update Employee Details")
 @when('admin updates employee details')
 def step_impl(context):
 
     context.update.update_employee_details()
 
 
+@allure.feature("PIM Module")
+@allure.story("Update Employee Details")
 @when('admin clicks save button')
 def step_impl(context):
 
     context.update.click_save()
 
 
+@allure.feature("PIM Module")
+@allure.story("Update Employee Details")
 @then('employee details should update successfully')
 def step_impl(context):
 

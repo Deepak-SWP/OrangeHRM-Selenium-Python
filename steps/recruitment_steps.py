@@ -1,3 +1,4 @@
+import allure
 from behave import *
 
 from utils.driver_setup import get_driver
@@ -9,6 +10,8 @@ from pages.login_page import LoginPage
 from pages.recruitment_page import RecruitmentPage
 
 
+@allure.feature("Recruitment Module")
+@allure.story("Open Recruitment Module")
 @given('admin logged into recruitment page')
 def step_impl(context):
 
@@ -23,6 +26,8 @@ def step_impl(context):
     login.login(USERNAME, PASSWORD)
 
 
+@allure.feature("Recruitment Module")
+@allure.story("Open Recruitment Module")
 @when('admin clicks Recruitment menu')
 def step_impl(context):
 
@@ -33,6 +38,8 @@ def step_impl(context):
     context.recruitment.click_recruitment()
 
 
+@allure.feature("Recruitment Module")
+@allure.story("Open Recruitment Module")
 @then('recruitment page should display')
 def step_impl(context):
 

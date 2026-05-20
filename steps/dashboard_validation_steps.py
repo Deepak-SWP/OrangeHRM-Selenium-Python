@@ -1,14 +1,15 @@
+import allure
 from behave import *
 
 from utils.driver_setup import get_driver
-
 from utils.config import USERNAME, PASSWORD
 
 from pages.login_page import LoginPage
-
 from pages.dashboard_page import DashboardPage
 
 
+@allure.feature("Dashboard Module")
+@allure.story("Verify Dashboard Page")
 @given('admin successfully logged into OrangeHRM')
 def step_impl(context):
 
@@ -27,6 +28,8 @@ def step_impl(context):
     )
 
 
+@allure.feature("Dashboard Module")
+@allure.story("Verify Dashboard Page")
 @then('dashboard page should be displayed')
 def step_impl(context):
 

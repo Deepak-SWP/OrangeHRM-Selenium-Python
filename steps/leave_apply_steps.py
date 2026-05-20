@@ -1,3 +1,4 @@
+import allure
 from behave import *
 
 from utils.driver_setup import get_driver
@@ -9,6 +10,8 @@ from pages.login_page import LoginPage
 from pages.leave_page import LeavePage
 
 
+@allure.feature("Leave Module")
+@allure.story("Open Leave Page")
 @given('employee logged into OrangeHRM')
 def step_impl(context):
 
@@ -23,6 +26,8 @@ def step_impl(context):
     login.login(USERNAME, PASSWORD)
 
 
+@allure.feature("Leave Module")
+@allure.story("Open Leave Page")
 @when('employee clicks Leave menu')
 def step_impl(context):
 
@@ -33,6 +38,8 @@ def step_impl(context):
     context.leave.click_leave_menu()
 
 
+@allure.feature("Leave Module")
+@allure.story("Open Leave Page")
 @then('leave page should display')
 def step_impl(context):
 

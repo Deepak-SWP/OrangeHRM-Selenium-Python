@@ -1,3 +1,4 @@
+import allure
 from behave import *
 
 from utils.driver_setup import get_driver
@@ -9,6 +10,8 @@ from pages.login_page import LoginPage
 from pages.search_user_page import SearchUserPage
 
 
+@allure.feature("Admin Module")
+@allure.story("Search User Records")
 @given('admin logged into OrangeHRM application')
 def step_impl(context):
 
@@ -23,6 +26,8 @@ def step_impl(context):
     login.login(USERNAME, PASSWORD)
 
 
+@allure.feature("Admin Module")
+@allure.story("Search User Records")
 @when('admin clicks Admin menu')
 def step_impl(context):
 
@@ -33,18 +38,24 @@ def step_impl(context):
     context.search.click_admin()
 
 
+@allure.feature("Admin Module")
+@allure.story("Search User Records")
 @when('admin enters username in search')
 def step_impl(context):
 
     context.search.enter_username()
 
 
+@allure.feature("Admin Module")
+@allure.story("Search User Records")
 @when('admin clicks user search button')
 def step_impl(context):
 
     context.search.click_search()
 
 
+@allure.feature("Admin Module")
+@allure.story("Search User Records")
 @then('user records should display')
 def step_impl(context):
 
