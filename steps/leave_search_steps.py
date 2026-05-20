@@ -1,3 +1,4 @@
+import allure
 from behave import given, when, then
 
 from selenium import webdriver
@@ -9,6 +10,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from pages.leave_search_page import LeaveSearchPage
 
 
+@allure.feature("Leave Module")
+@allure.story("Search Leave Records")
 @given('admin logged into OrangeHRM for leave search')
 def step_impl(context):
 
@@ -46,18 +49,24 @@ def step_impl(context):
     ).click()
 
 
+@allure.feature("Leave Module")
+@allure.story("Search Leave Records")
 @when('admin clicks Leave menu')
 def step_impl(context):
 
     context.leave.click_leave()
 
 
+@allure.feature("Leave Module")
+@allure.story("Search Leave Records")
 @when('admin searches leave records')
 def step_impl(context):
 
     context.leave.search_leave_records()
 
 
+@allure.feature("Leave Module")
+@allure.story("Search Leave Records")
 @then('leave records should display successfully')
 def step_impl(context):
 

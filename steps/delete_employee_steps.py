@@ -1,3 +1,4 @@
+import allure
 from behave import given, when, then
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -6,6 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from pages.delete_employee_page import DeleteEmployeePage
 
 
+@allure.feature("PIM Module")
+@allure.story("Delete Employee Record")
 @given('admin logged into OrangeHRM portal')
 def step_impl(context):
 
@@ -38,6 +41,8 @@ def step_impl(context):
     ).click()
 
 
+@allure.feature("PIM Module")
+@allure.story("Delete Employee Record")
 @when('admin opens PIM module for delete')
 def step_impl(context):
 
@@ -45,24 +50,32 @@ def step_impl(context):
     context.delete.open_employee_list()
 
 
+@allure.feature("PIM Module")
+@allure.story("Delete Employee Record")
 @when('admin selects employee record')
 def step_impl(context):
 
     context.delete.select_employee_record()
 
 
+@allure.feature("PIM Module")
+@allure.story("Delete Employee Record")
 @when('admin clicks delete button')
 def step_impl(context):
 
     context.delete.click_delete_button()
 
 
+@allure.feature("PIM Module")
+@allure.story("Delete Employee Record")
 @when('admin confirms delete action')
 def step_impl(context):
 
     context.delete.confirm_delete_action()
 
 
+@allure.feature("PIM Module")
+@allure.story("Delete Employee Record")
 @then('employee record should delete successfully')
 def step_impl(context):
 
