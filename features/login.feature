@@ -1,3 +1,6 @@
+@smoke
+@regression
+
 Feature: Login Functionality
 
   Scenario: Valid Login

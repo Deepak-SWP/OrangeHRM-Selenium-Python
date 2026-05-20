@@ -1,3 +1,5 @@
+@regression
+
 Feature: Update Employee Functionality
 
     Scenario: Update Employee Details

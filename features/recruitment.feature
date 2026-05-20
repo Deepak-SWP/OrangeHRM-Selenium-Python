@@ -1,3 +1,5 @@
+@regression
+
 Feature: Recruitment Functionality
 
     Scenario: Open Recruitment Module

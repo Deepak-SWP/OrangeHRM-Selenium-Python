@@ -25,11 +25,19 @@ class LeavePage:
 
     def click_leave_menu(self):
 
+        leave = self.wait.until(
+            EC.visibility_of_element_located(
+                self.leave_menu
+            )
+        )
+
         self.wait.until(
             EC.element_to_be_clickable(
                 self.leave_menu
             )
-        ).click()
+        )
+
+        leave.click()
 
     def verify_leave_page(self):
 

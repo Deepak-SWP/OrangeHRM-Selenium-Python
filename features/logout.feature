@@ -1,3 +1,6 @@
+@smoke
+@regression
+
 Feature: Logout Functionality
 
   Scenario: Logout Successfully

@@ -1,3 +1,5 @@
+@regression
+
 Feature: Delete Employee Functionality
 
   Scenario: Delete Employee Record

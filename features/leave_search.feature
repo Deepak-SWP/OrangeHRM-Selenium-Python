@@ -1,3 +1,5 @@
+@regression
+
 Feature: Leave Search Functionality
 
   Scenario: Search Leave Records
