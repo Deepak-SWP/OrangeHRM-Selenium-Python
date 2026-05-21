@@ -1,126 +1,250 @@
 # OrangeHRM Selenium Python Automation Framework
 
----
-
 ## Project Overview
 
-This project is an end-to-end automation testing framework developed for the OrangeHRM application using Selenium, Python, Behave BDD, Allure Reporting, Postman, Newman, and GitHub Actions.
+This project is a complete end-to-end automation testing framework developed for the OrangeHRM application using Selenium with Python.
 
-The framework follows the Page Object Model (POM) design pattern to improve maintainability, scalability, reusability, synchronization handling, and stable automation execution.
+The framework is designed using the Page Object Model (POM) design pattern to improve code reusability, maintainability, scalability, synchronization handling, and stable test execution.
 
----
-
-## Tools & Technologies Used
-
-* Python
-* Selenium WebDriver
-* Behave BDD
-* Allure Reporting
-* Postman API Testing
-* Newman CLI Reporting
-* Git & GitHub
-* GitHub Actions
-* Visual Studio Code
-* Chrome Browser
-* ChromeDriver
-* Page Object Model (POM)
-* Explicit Waits
-* Gherkin Syntax
-* JSON
-* CSV
-* Virtual Environment (venv)
-* REST API Testing
-* Modular Framework Design
-* Python Logging Module
-* pytest-xdist
+The project covers both UI Automation Testing and API Testing using modern automation tools and frameworks.
 
 ---
 
-## Features Automated
+# Objectives of the Project
 
-### UI Automation
+* Automate OrangeHRM web application functionalities
+* Perform end-to-end UI testing
+* Validate application workflows using BDD approach
+* Generate professional automation reports
+* Perform API testing using Postman and Newman
+* Implement reusable and modular automation framework
+* Integrate CI/CD using GitHub Actions
 
-* Login Validation
-* Invalid Login Validation
+---
+
+# Tools & Technologies Used
+
+| Tool / Technology  | Purpose                     |
+| ------------------ | --------------------------- |
+| Python             | Programming Language        |
+| Selenium WebDriver | UI Automation               |
+| Behave BDD         | Behavior Driven Development |
+| Allure Reports     | Reporting                   |
+| Postman            | API Testing                 |
+| Newman             | Postman CLI Execution       |
+| Git & GitHub       | Version Control             |
+| GitHub Actions     | CI/CD Pipeline              |
+| VS Code            | IDE                         |
+| Chrome Browser     | Test Execution              |
+| ChromeDriver       | Browser Driver              |
+| WebDriver Manager  | Driver Management           |
+| CSV                | Data Driven Testing         |
+| JSON               | API Validation              |
+| Logging Module     | Execution Logging           |
+| pytest-xdist       | Parallel Execution Support  |
+
+---
+
+# Framework Design
+
+The framework follows the Page Object Model (POM) design pattern.
+
+## Framework Components
+
+### 1. Feature Files
+
+Feature files are written using Gherkin syntax.
+
+These files contain:
+
+* Scenarios
+* Given
+* When
+* Then steps
+
+Example:
+
+```gherkin
+Feature: Login Functionality
+
+Scenario: Valid Login
+
+Given user is on login page
+When user enters valid username and password
+Then user should navigate to dashboard
+```
+
+---
+
+### 2. Step Definition Files
+
+Step definition files contain Python code implementation for feature file steps.
+
+These files connect feature file steps with automation code.
+
+---
+
+### 3. Page Object Model (POM)
+
+Each application page has a separate Python class.
+
+Examples:
+
+* Login Page
+* Dashboard Page
+* Employee Page
+* Leave Page
+* Recruitment Page
+
+POM helps in:
+
+* Reusability
+* Better maintenance
+* Reduced code duplication
+* Easy locator management
+
+---
+
+### 4. Utility Files
+
+Utility files contain reusable common functionalities.
+
+Examples:
+
+* Driver setup
+* Logging
+* Configuration handling
+
+---
+
+# Features Automated
+
+## UI Automation
+
+### Authentication Module
+
+* Valid Login
+* Invalid Login
 * Logout Functionality
+* Forgot Password
+
+### Dashboard Module
+
 * Dashboard Validation
+
+### PIM Module
+
 * Add Employee
 * Update Employee
 * Delete Employee
-* Employee List Validation
 * Search Employee
-* Search User
-* Leave Module Validation
-* Leave Search Validation
-* Recruitment Module Validation
-* Forgot Password Functionality
+* Employee List Validation
+
+### Leave Module
+
+* Open Leave Module
+* Search Leave Records
+
+### Admin Module
+
+* Search User Records
+
+### Recruitment Module
+
+* Recruitment Page Validation
 
 ---
 
-## API Testing
+# API Testing
 
-* GET API Validation
-* POST API Validation
+API testing is performed using Postman and Newman.
+
+## API Validations
+
+* GET Request Validation
+* POST Request Validation
 * Login API Validation
 * Status Code Validation
 * Response Validation
-* Newman Report Generation
 
 ---
 
-## Framework Design
+# Reporting
 
-* Page Object Model (POM)
-* Reusable Methods
-* Explicit Waits
-* Modular Framework Structure
-* Feature Files using Gherkin Syntax
-* Step Definitions using Behave
-* Smoke & Regression Tags
-* Allure Reporting Integration
-* API Testing using Postman
-* Newman CLI Execution
-* Logging Framework Integration
-* Try-Catch Exception Handling
-* Assertions and Validation Handling
-* False Failure & False Pass Reduction
-* Data Driven Testing (DDT) using CSV
-* Reusable Driver Initialization
-* Synchronization Handling using Explicit Waits
-* Parallel Execution Support using pytest-xdist
-* Basic CI/CD Pipeline using GitHub Actions
-* Stable URL-Based Verification
-* JavaScript Executor Click Handling
-* Professional Logging Strategy
-* Dynamic Wait Handling
+## Allure Reports
 
----
+Allure Reports provide:
 
-## Reporting Features
-
-### Allure Report
-
-* Overview
-* Suites
+* Test Execution Summary
+* Passed and Failed Tests
+* Graphical Representation
+* Timeline Reports
 * Behaviors
+* Suites
 * Packages
-* Categories
-* Environment
-* Executors
-* Timeline
-* Graphs
 
-### Newman Report
+## Newman Reports
 
-* Total Requests
-* Assertions Summary
-* Response Time Analysis
-* Failed Test Summary
-* API Execution Dashboard
+Newman Reports provide:
+
+* Request Summary
+* API Response Validation
+* Assertion Results
+* Execution Summary
 
 ---
 
-## Project Structure
+# Logging
+
+Python Logging module is used to track automation execution.
+
+Logs help in:
+
+* Debugging
+* Failure Analysis
+* Execution Tracking
+
+Log file:
+
+```text
+logs/automation.log
+```
+
+---
+
+# Data Driven Testing (DDT)
+
+CSV file is used for Data Driven Testing.
+
+Example:
+
+```text
+testdata/login_data.csv
+```
+
+The framework reads login credentials from CSV files and executes tests dynamically.
+
+---
+
+# CI/CD Integration
+
+GitHub Actions is used for CI/CD pipeline integration.
+
+Whenever code is pushed to GitHub:
+
+* Workflow starts automatically
+* Dependencies are installed
+* Automation tests execute automatically
+
+Workflow file location:
+
+```text
+.github/workflows/automation.yml
+```
+
+---
+
+# Project Structure
 
 ```text
 OrangeHRM-Selenium-Python/
@@ -128,6 +252,9 @@ OrangeHRM-Selenium-Python/
 ├── .github/
 │   └── workflows/
 │       └── automation.yml
+│
+├── allure-report/
+├── allure-results/
 │
 ├── drivers/
 │   └── chromedriver.exe
@@ -140,39 +267,46 @@ OrangeHRM-Selenium-Python/
 ├── logs/
 │   └── automation.log
 │
+├── newman/
 ├── pages/
+├── postman/
 │
-├── utils/
-│   ├── driver_setup.py
-│   ├── config.py
-│   └── logger.py
-│
+├── screenshots/
 ├── testdata/
 │   └── login_data.csv
 │
-├── allure-results/
-├── allure-report/
-├── postman/
-├── newman/
-├── screenshots/
+├── utils/
+│   ├── config.py
+│   ├── driver_setup.py
+│   └── logger.py
 │
+├── .gitignore
+├── README.md
 ├── behave.ini
 ├── requirements.txt
-└── README.md
+│
+└── automation.log
 ```
+
 ---
 
-## Setup Instructions
+# How to Install the Project
 
-### Clone Repository
+## Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/your-username/OrangeHRM-Selenium-Python.git
+git clone <repository_url>
 ```
 
 ---
 
-### Create Virtual Environment
+## Step 2: Open Project
+
+Open project in VS Code.
+
+---
+
+## Step 3: Create Virtual Environment
 
 ```bash
 python -m venv venv
@@ -180,7 +314,9 @@ python -m venv venv
 
 ---
 
-### Activate Virtual Environment
+## Step 4: Activate Virtual Environment
+
+### Windows
 
 ```bash
 venv\Scripts\activate
@@ -188,7 +324,7 @@ venv\Scripts\activate
 
 ---
 
-### Install Required Packages
+## Step 5: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -196,9 +332,9 @@ pip install -r requirements.txt
 
 ---
 
-## Execution Commands
+# How to Execute Tests
 
-### Run Behave Tests
+## Run Complete Framework
 
 ```bash
 behave
@@ -206,7 +342,17 @@ behave
 
 ---
 
-### Generate Allure Report
+## Run Specific Feature
+
+```bash
+behave features/login.feature
+```
+
+---
+
+# Generate Allure Report
+
+## Generate Report
 
 ```bash
 allure generate allure-results --clean -o allure-report
@@ -214,7 +360,7 @@ allure generate allure-results --clean -o allure-report
 
 ---
 
-### Open Allure Report
+## Open Report
 
 ```bash
 allure open allure-report
@@ -222,90 +368,42 @@ allure open allure-report
 
 ---
 
-## API Testing Setup
+# GitHub Actions Execution
 
-### Newman Installation
+After pushing code to GitHub:
 
-```bash
-npm install -g newman
-npm install -g newman-reporter-htmlextra
-```
+* GitHub Actions automatically executes tests
+* CI/CD pipeline validates framework execution
 
 ---
 
-### Run Newman Collection
+# Advantages of This Framework
 
-```bash
-newman run "OrangeHRM API Testing.postman_collection.json"
-```
-
----
-
-## CI/CD Pipeline Setup
-
-### GitHub Actions Workflow
-
-The framework includes a basic CI/CD pipeline using GitHub Actions for automated execution.
-
-Workflow File Path:
-
-```text
-.github/workflows/automation.yml
-```
-
-The pipeline performs:
-
-* Repository Checkout
-* Python Setup
-* Dependency Installation
-* Behave Test Execution
-* Allure Report Generation
+* Reusable Framework
+* Scalable Design
+* Easy Maintenance
+* Better Synchronization Handling
+* Reduced Code Duplication
+* Professional Reporting
+* API + UI Automation
+* CI/CD Integration
+* Logging Support
+* Parallel Execution Support
 
 ---
 
-## Framework Highlights
+# Test Execution Summary
 
-* End-to-End Test Automation
-* UI + API Automation
-* BDD Framework Design
-* Enterprise-Level Reporting
-* Reusable Automation Components
-* Stable Synchronization Handling
-* Scalable Framework Architecture
-* Git Branching & Merge Workflow
-* Smoke & Regression Test Execution
-* API Automation with Newman Reporting
-* Logging and Exception Handling Framework
-* Stable Synchronization using Explicit Waits
-* False Failure Reduction Mechanism
-* Basic Data Driven Testing using CSV
-* Reusable Utilities and Modular Components
-* Parallel Execution Support using pytest-xdist
-* Basic CI/CD Pipeline using GitHub Actions
+The framework successfully automates:
+
+* 14 Features
+* 14 Scenarios
+* 61 Steps
 
 ---
 
-## Screenshots Included
+# Conclusion
 
-* Allure Overview Dashboard
-* Allure Suites Page
-* Newman HTML Report
-* Postman Login API Success
-* VS Code Project Structure
-* GitHub Repository Structure
-* GitHub Actions Workflow Execution
+This project demonstrates a complete automation testing framework using Selenium Python with BDD framework integration, reporting tools, API testing, reusable framework architecture, logging, CI/CD pipeline, and professional automation practices.
 
----
-
-## Test Execution Summary
-
-* Total Features Passed: 14
-* Total Scenarios Passed: 14
-* Total Steps Passed: 61
-* 100% Test Execution Success
-
----
-
-## Team
-
-PyAutomation Crew
+The framework is designed to simulate real-time industry automation testing standards and improve software quality through automated validation.
