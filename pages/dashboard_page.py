@@ -1,13 +1,14 @@
-import time
-
 from selenium.webdriver.common.by import By
 
 from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.support import expected_conditions as EC
 
+from utils.logger import logger
+
 
 class DashboardPage:
+    """Dashboard and Logout Functionality"""
 
     dashboard_text = (
         By.XPATH,
@@ -35,56 +36,110 @@ class DashboardPage:
 
         self.wait = WebDriverWait(driver, 30)
 
-    # verify dashboard page
     def verify_dashboard(self):
+        """Verify Dashboard Page"""
 
-        time.sleep(5)
+        try:
 
-        dashboard_elements = self.driver.find_elements(
-            By.XPATH,
-            "//h6[text()='Dashboard']"
-        )
+            logger.info("Verifying Dashboard Page")
 
-        return len(dashboard_elements) > 0
+            self.wait.until(
+                EC.visibility_of_element_located(
+                    self.dashboard_text
+                )
+            )
 
-    # click profile dropdown
+            result = (
+                "dashboard"
+                in self.driver.current_url.lower()
+            )
+
+            logger.info("Dashboard Verified Successfully")
+
+            return result
+
+        except Exception as e:
+
+            logger.error(f"Dashboard Verification Failed: {e}")
+
+            return False
+
     def click_profile(self):
+        """Click Profile Dropdown"""
 
-        profile = self.wait.until(
-            EC.element_to_be_clickable(
-                self.profile_menu
+        try:
+
+            logger.info("Clicking Profile Menu")
+
+            profile = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.profile_menu
+                )
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].click();",
-            profile
-        )
+            self.driver.execute_script(
+                "arguments[0].click();",
+                profile
+            )
 
-        time.sleep(2)
+            logger.info("Profile Menu Clicked Successfully")
 
-    # click logout
+        except Exception as e:
+
+            logger.error(f"Profile Menu Click Failed: {e}")
+
+            raise
+
     def click_logout(self):
+        """Click Logout Button"""
 
-        logout = self.wait.until(
-            EC.element_to_be_clickable(
-                self.logout_button
+        try:
+
+            logger.info("Clicking Logout Button")
+
+            logout = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.logout_button
+                )
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].click();",
-            logout
-        )
+            self.driver.execute_script(
+                "arguments[0].click();",
+                logout
+            )
 
-        time.sleep(5)
+            logger.info("Logout Successful")
 
-    # verify login page after logout
+        except Exception as e:
+
+            logger.error(f"Logout Failed: {e}")
+
+            raise
+
     def verify_login_page(self):
+        """Verify Login Page After Logout"""
 
-        login_elements = self.driver.find_elements(
-            By.XPATH,
-            "//h5[text()='Login']"
-        )
+        try:
 
-        return len(login_elements) > 0
+            logger.info("Verifying Login Page")
+
+            self.wait.until(
+                EC.visibility_of_element_located(
+                    self.login_page_text
+                )
+            )
+
+            result = (
+                "login"
+                in self.driver.current_url.lower()
+            )
+
+            logger.info("Login Page Verified Successfully")
+
+            return result
+
+        except Exception as e:
+
+            logger.error(f"Login Page Verification Failed: {e}")
+
+            return False

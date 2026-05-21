@@ -1,4 +1,5 @@
 import allure
+
 from behave import *
 
 from utils.driver_setup import get_driver
@@ -9,11 +10,16 @@ from pages.login_page import LoginPage
 
 from pages.search_employee_page import SearchEmployeePage
 
+from utils.logger import logger
+
 
 @allure.feature("PIM Module")
 @allure.story("Search Added Employee")
 @given('admin logged into OrangeHRM')
 def step_impl(context):
+    """Login to OrangeHRM Application"""
+
+    logger.info("Launching Browser")
 
     context.driver = get_driver()
 
@@ -23,34 +29,40 @@ def step_impl(context):
 
     login.login(USERNAME, PASSWORD)
 
-
-@when('admin opens PIM module')
-def step_impl(context):
-
     context.search = SearchEmployeePage(
         context.driver
     )
 
-    context.search.click_pim()
 
+@when('admin opens PIM module')
+def step_impl(context):
+    """Open PIM Module"""
+
+    context.search.click_pim()
 
 
 @when('admin searches employee name')
 def step_impl(context):
+    """Search Employee Name"""
 
     context.search.search_employee()
 
 
 @when('admin clicks search button')
 def step_impl(context):
+    """Click Search Button"""
 
     context.search.click_search()
 
 
-
 @then('employee details should display')
 def step_impl(context):
+    """Verify Employee Details"""
 
     assert context.search.verify_employee()
 
+    logger.info("Employee Details Verified Successfully")
+
     context.driver.quit()
+
+    logger.info("Browser Closed Successfully")

@@ -4,8 +4,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.support import expected_conditions as EC
 
+from utils.logger import logger
+
+import random
+
 
 class EmployeePage:
+    """Employee Management Functionality"""
 
     pim_menu = (
         By.XPATH,
@@ -32,11 +37,6 @@ class EmployeePage:
         "//button[@type='submit']"
     )
 
-    success_message = (
-        By.XPATH,
-        "//h6[text()='Personal Details']"
-    )
-
     def __init__(self, driver):
 
         self.driver = driver
@@ -44,73 +44,187 @@ class EmployeePage:
         self.wait = WebDriverWait(driver, 20)
 
     def click_pim(self):
+        """Click PIM menu"""
 
-        self.wait.until(
-            EC.element_to_be_clickable(
-                self.pim_menu
+        try:
+
+            logger.info("Clicking PIM Menu")
+
+            self.wait.until(
+                EC.element_to_be_clickable(
+                    self.pim_menu
+                )
+            ).click()
+
+            logger.info(
+                "PIM Menu Clicked Successfully"
             )
-        ).click()
+
+        except Exception as e:
+
+            logger.error(
+                f"PIM Menu Click Failed: {e}"
+            )
+
+            raise
 
     def click_add_employee(self):
+        """Click Add Employee button"""
 
-        add_btn = self.wait.until(
-            EC.element_to_be_clickable(
-                self.add_employee_btn
+        try:
+
+            logger.info(
+                "Clicking Add Employee Button"
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].scrollIntoView();",
-            add_btn
-        )
+            add_btn = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.add_employee_btn
+                )
+            )
 
-        add_btn.click()
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView();",
+                add_btn
+            )
+
+            self.driver.execute_script(
+                "arguments[0].click();",
+                add_btn
+            )
+
+            logger.info(
+                "Add Employee Button Clicked Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Add Employee Button Click Failed: {e}"
+            )
+
+            raise
 
     def enter_employee_details(self):
+        """Enter Employee Details"""
 
-        first_name_input = self.wait.until(
-            EC.element_to_be_clickable(
-                self.first_name
+        try:
+
+            logger.info(
+                "Entering Employee Details"
             )
-        )
 
-        first_name_input.clear()
-
-        first_name_input.send_keys("Deepak")
-
-        last_name_input = self.wait.until(
-            EC.element_to_be_clickable(
-                self.last_name
+            random_number = random.randint(
+                1000,
+                9999
             )
-        )
 
-        last_name_input.clear()
+            first_name_input = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.first_name
+                )
+            )
 
-        last_name_input.send_keys("Kumar")
+            first_name_input.clear()
+
+            first_name_input.send_keys(
+                f"Deepak{random_number}"
+            )
+
+            last_name_input = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.last_name
+                )
+            )
+
+            last_name_input.clear()
+
+            last_name_input.send_keys("Kumar")
+
+            logger.info(
+                "Employee Details Entered Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Entering Employee Details Failed: {e}"
+            )
+
+            raise
 
     def click_save(self):
+        """Click Save Button"""
 
-        self.wait.until(
-            EC.invisibility_of_element_located(
-                (By.CLASS_NAME, "oxd-form-loader")
+        try:
+
+            logger.info("Clicking Save Button")
+
+            self.wait.until(
+                EC.invisibility_of_element_located(
+                    (
+                        By.CLASS_NAME,
+                        "oxd-form-loader"
+                    )
+                )
             )
-        )
 
-        save_btn = self.wait.until(
-            EC.element_to_be_clickable(
-                self.save_button
+            save_btn = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.save_button
+                )
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].click();",
-            save_btn
-        )
+            self.driver.execute_script(
+                "arguments[0].click();",
+                save_btn
+            )
+
+            logger.info(
+                "Save Button Clicked Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Save Button Click Failed: {e}"
+            )
+
+            raise
 
     def verify_employee_added(self):
+        """Verify Employee Added Successfully"""
 
-        return self.wait.until(
-            EC.visibility_of_element_located(
-                self.success_message
+        try:
+
+            logger.info(
+                "Verifying Employee Added"
             )
-        ).is_displayed()
+
+            self.wait.until(
+                EC.any_of(
+                    EC.url_contains(
+                        "viewPersonalDetails"
+                    ),
+                    EC.visibility_of_element_located(
+                        (
+                            By.XPATH,
+                            "//h6[text()='Personal Details']"
+                        )
+                    )
+                )
+            )
+
+            logger.info(
+                "Employee Added Successfully"
+            )
+
+            return True
+
+        except Exception as e:
+
+            logger.error(
+                f"Employee Verification Failed: {e}"
+            )
+
+            return False

@@ -1,13 +1,16 @@
-import time
+from utils.logger import logger
 
 from selenium.webdriver.common.by import By
+
 from selenium.webdriver.support.ui import WebDriverWait
+
 from selenium.webdriver.support import expected_conditions as EC
 
 from utils.config import URL
 
 
 class LoginPage:
+    """Login and Forgot Password Functionality"""
 
     username = (
         By.NAME,
@@ -44,6 +47,11 @@ class LoginPage:
         "//button[@type='submit']"
     )
 
+    dashboard_text = (
+        By.XPATH,
+        "//h6[text()='Dashboard']"
+    )
+
     def __init__(self, driver):
 
         self.driver = driver
@@ -51,88 +59,257 @@ class LoginPage:
         self.wait = WebDriverWait(driver, 30)
 
     def open(self):
+        """Open OrangeHRM Application"""
 
-        self.driver.get(URL)
+        try:
+
+            logger.info("Opening OrangeHRM Application")
+
+            self.driver.get(URL)
+
+            logger.info(
+                "OrangeHRM Application Opened Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Application Opening Failed: {e}"
+            )
+
+            raise
 
     def login(self, uname, pwd):
+        """Perform Login Action"""
 
-        username = self.wait.until(
-            EC.visibility_of_element_located(
-                self.username
+        try:
+
+            logger.info("Performing Login")
+
+            username = self.wait.until(
+                EC.visibility_of_element_located(
+                    self.username
+                )
             )
-        )
 
-        password = self.wait.until(
-            EC.visibility_of_element_located(
-                self.password
+            password = self.wait.until(
+                EC.visibility_of_element_located(
+                    self.password
+                )
             )
-        )
 
-        username.clear()
-        username.send_keys(uname)
+            username.clear()
 
-        password.clear()
-        password.send_keys(pwd)
+            username.send_keys(uname)
 
-        login_button = self.wait.until(
-            EC.element_to_be_clickable(
-                self.login_btn
+            password.clear()
+
+            password.send_keys(pwd)
+
+            login_button = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.login_btn
+                )
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].click();",
-            login_button
-        )
+            self.driver.execute_script(
+                "arguments[0].click();",
+                login_button
+            )
 
-        time.sleep(8)
+            logger.info(
+                "Login Button Clicked Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(f"Login Failed: {e}")
+
+            raise
+
+    def verify_dashboard_login(self):
+        """Verify Successful Login"""
+
+        try:
+
+            logger.info("Verifying Dashboard Login")
+
+            self.wait.until(
+                EC.visibility_of_element_located(
+                    self.dashboard_text
+                )
+            )
+
+            result = (
+                "dashboard"
+                in self.driver.current_url.lower()
+            )
+
+            logger.info("Dashboard Login Verified")
+
+            return result
+
+        except Exception as e:
+
+            logger.error(
+                f"Dashboard Verification Failed: {e}"
+            )
+
+            return False
 
     def verify_invalid_login(self):
+        """Verify Invalid Login Message"""
 
-        return self.wait.until(
-            EC.visibility_of_element_located(
-                self.invalid_message
+        try:
+
+            logger.info(
+                "Verifying Invalid Login Message"
             )
-        ).is_displayed()
+
+            self.wait.until(
+                EC.visibility_of_element_located(
+                    self.invalid_message
+                )
+            )
+
+            result = (
+                "auth/login"
+                in self.driver.current_url
+            )
+
+            logger.info(
+                "Invalid Login Verified Successfully"
+            )
+
+            return result
+
+        except Exception as e:
+
+            logger.error(
+                f"Invalid Login Verification Failed: {e}"
+            )
+
+            return False
 
     def click_forgot_password(self):
+        """Click Forgot Password Link"""
 
-        forgot = self.wait.until(
-            EC.element_to_be_clickable(
-                self.forgot_password_link
+        try:
+
+            logger.info(
+                "Clicking Forgot Password Link"
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].click();",
-            forgot
-        )
+            forgot = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.forgot_password_link
+                )
+            )
 
-        time.sleep(3)
+            self.driver.execute_script(
+                "arguments[0].click();",
+                forgot
+            )
+
+            logger.info(
+                "Forgot Password Link Clicked Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Forgot Password Click Failed: {e}"
+            )
+
+            raise
 
     def enter_forgot_username(self):
+        """Enter Forgot Password Username"""
 
-        self.wait.until(
-            EC.visibility_of_element_located(
-                self.forgot_username
+        try:
+
+            logger.info(
+                "Entering Forgot Password Username"
             )
-        ).send_keys("Admin")
+
+            username_input = self.wait.until(
+                EC.visibility_of_element_located(
+                    self.forgot_username
+                )
+            )
+
+            username_input.clear()
+
+            username_input.send_keys("Admin")
+
+            logger.info(
+                "Forgot Password Username Entered Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Entering Forgot Username Failed: {e}"
+            )
+
+            raise
 
     def click_reset_password(self):
+        """Click Reset Password Button"""
 
-        reset_btn = self.wait.until(
-            EC.element_to_be_clickable(
-                self.reset_password_button
+        try:
+
+            logger.info(
+                "Clicking Reset Password Button"
             )
-        )
 
-        self.driver.execute_script(
-            "arguments[0].click();",
-            reset_btn
-        )
+            reset_btn = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.reset_password_button
+                )
+            )
 
-        time.sleep(5)
+            self.driver.execute_script(
+                "arguments[0].click();",
+                reset_btn
+            )
+
+            logger.info(
+                "Reset Password Button Clicked Successfully"
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"Reset Password Click Failed: {e}"
+            )
+
+            raise
 
     def verify_reset_message(self):
+        """Verify Reset Password Message"""
 
-        return "requestResetPassword" in self.driver.current_url
+        try:
+
+            logger.info(
+                "Verifying Reset Password Message"
+            )
+
+            result = (
+                "requestResetPassword"
+                in self.driver.current_url
+            )
+
+            logger.info(
+                "Reset Password Verified Successfully"
+            )
+
+            return result
+
+        except Exception as e:
+
+            logger.error(
+                f"Reset Password Verification Failed: {e}"
+            )
+
+            return False

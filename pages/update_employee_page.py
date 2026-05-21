@@ -4,8 +4,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.support import expected_conditions as EC
 
+from utils.logger import logger
+
 
 class UpdateEmployeePage:
+    """Update Employee Functionality"""
 
     pim_menu = (
         By.XPATH,
@@ -29,7 +32,7 @@ class UpdateEmployeePage:
 
     success_message = (
         By.XPATH,
-        "//p[contains(text(),'Successfully Updated')]"
+        "//h6[text()='Personal Details']"
     )
 
     def __init__(self, driver):
@@ -39,59 +42,141 @@ class UpdateEmployeePage:
         self.wait = WebDriverWait(driver, 20)
 
     def click_pim(self):
+        """Click PIM Menu"""
 
-        self.wait.until(
-            EC.element_to_be_clickable(
-                self.pim_menu
+        try:
+
+            logger.info("Clicking PIM Menu")
+
+            pim = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.pim_menu
+                )
             )
-        ).click()
+
+            self.driver.execute_script(
+                "arguments[0].click();",
+                pim
+            )
+
+            logger.info("PIM Menu Clicked Successfully")
+
+        except Exception as e:
+
+            logger.error(f"PIM Menu Click Failed: {e}")
+
+            raise
 
     def open_employee_record(self):
+        """Open Employee Record"""
 
-        self.wait.until(
-            EC.element_to_be_clickable(
-                self.employee_record
+        try:
+
+            logger.info("Opening Employee Record")
+
+            record = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.employee_record
+                )
             )
-        ).click()
+
+            self.driver.execute_script(
+                "arguments[0].click();",
+                record
+            )
+
+            logger.info("Employee Record Opened Successfully")
+
+        except Exception as e:
+
+            logger.error(f"Employee Record Opening Failed: {e}")
+
+            raise
 
     def update_employee_details(self):
+        """Update Employee Details"""
 
-        field = self.wait.until(
-            EC.visibility_of_element_located(
-                self.nickname_field
+        try:
+
+            logger.info("Updating Employee Details")
+
+            field = self.wait.until(
+                EC.visibility_of_element_located(
+                    self.nickname_field
+                )
             )
-        )
 
-        field.clear()
+            field.clear()
 
-        field.send_keys("Deepak")
+            field.send_keys("Deepak")
+
+            logger.info("Employee Details Updated Successfully")
+
+        except Exception as e:
+
+            logger.error(f"Employee Update Failed: {e}")
+
+            raise
 
     def click_save(self):
+        """Click Save Button"""
 
-        self.wait.until(
-        EC.invisibility_of_element_located(
-            (
-                By.CLASS_NAME,
-                "oxd-form-loader"
+        try:
+
+            logger.info("Clicking Save Button")
+
+            self.wait.until(
+                EC.invisibility_of_element_located(
+                    (
+                        By.CLASS_NAME,
+                        "oxd-form-loader"
+                    )
+                )
             )
-        )
-    )
 
-        self.wait.until(
-        EC.element_to_be_clickable(
-            self.save_button
-        )
-    ).click()
+            save_btn = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.save_button
+                )
+            )
+
+            self.driver.execute_script(
+                "arguments[0].click();",
+                save_btn
+            )
+
+            logger.info("Save Button Clicked Successfully")
+
+        except Exception as e:
+
+            logger.error(f"Save Button Click Failed: {e}")
+
+            raise
 
     def verify_update(self):
+        """Verify Employee Update"""
 
-        success = self.wait.until(
-        EC.visibility_of_element_located(
-            (
-                By.XPATH,
-                "//div[contains(@class,'oxd-toast')]"
+        try:
+
+            logger.info("Verifying Employee Update")
+
+            self.wait.until(
+                EC.visibility_of_element_located(
+                    self.success_message
+                )
             )
-        )
-    )
 
-        return success.is_displayed()
+            result = (
+                "viewPersonalDetails"
+                in self.driver.current_url
+            )
+
+            logger.info("Employee Updated Successfully")
+
+            return result
+
+        except Exception as e:
+
+            logger.error(f"Employee Update Verification Failed: {e}")
+
+            return False

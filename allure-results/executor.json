@@ -1,8 +1,9 @@
 {
   "name": "PyAutomation Crew",
-  "type": "Local",
+  "type": "GitHub",
   "buildName": "OrangeHRM Selenium Python Automation Framework",
   "buildOrder": "1",
   "reportName": "Allure Automation Report",
-  "url": "https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python"
+  "url": "https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python",
+  "buildUrl": "https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python"
 }

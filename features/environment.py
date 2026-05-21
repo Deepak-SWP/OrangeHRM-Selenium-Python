@@ -1,5 +1,19 @@
+from utils.logger import logger
+
+
 def before_scenario(context, scenario):
-    print(f"Starting Scenario: {scenario.name}")
+    """Execute Before Every Scenario"""
+
+    logger.info(f"Starting Scenario: {scenario.name}")
+
 
 def after_scenario(context, scenario):
-    print(f"Completed Scenario: {scenario.name}")
+    """Execute After Every Scenario"""
+
+    logger.info(f"Completed Scenario: {scenario.name}")
+
+    if hasattr(context, "driver"):
+
+        context.driver.quit()
+
+        logger.info("Browser Closed Successfully")
