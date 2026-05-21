@@ -29,6 +29,8 @@ def step_impl(context):
 
     login.login(USERNAME, PASSWORD)
 
+    logger.info("Login Successful")
+
     context.delete = DeleteEmployeePage(
         context.driver
     )

@@ -255,3 +255,260 @@
 2026-05-21 17:26:29,809 - INFO - Browser Closed Successfully
 2026-05-21 17:26:29,809 - INFO - Completed Scenario: Update Employee Details
 2026-05-21 17:26:46,128 - INFO - Browser Closed Successfully
+2026-05-22 00:49:53,214 - INFO - Starting Scenario: Add Employee Successfully
+2026-05-22 00:49:53,216 - INFO - Launching Browser
+2026-05-22 00:49:53,216 - INFO - Initializing Chrome Browser
+2026-05-22 00:49:54,383 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:49:54,385 - INFO - Opening OrangeHRM Application
+2026-05-22 00:49:57,288 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:49:57,289 - INFO - Performing Login
+2026-05-22 00:49:58,184 - INFO - Login Button Clicked Successfully
+2026-05-22 00:49:58,191 - INFO - Clicking PIM Menu
+2026-05-22 00:50:00,833 - INFO - PIM Menu Clicked Successfully
+2026-05-22 00:50:00,834 - INFO - Clicking Add Employee Button
+2026-05-22 00:50:01,955 - INFO - Add Employee Button Clicked Successfully
+2026-05-22 00:50:01,956 - INFO - Entering Employee Details
+2026-05-22 00:50:02,806 - INFO - Employee Details Entered Successfully
+2026-05-22 00:50:02,807 - INFO - Clicking Save Button
+2026-05-22 00:50:12,900 - INFO - Save Button Clicked Successfully
+2026-05-22 00:50:12,902 - INFO - Verifying Employee Added
+2026-05-22 00:50:17,538 - INFO - Employee Added Successfully
+2026-05-22 00:50:17,539 - INFO - Employee Added Successfully
+2026-05-22 00:50:20,265 - INFO - Browser Closed Successfully
+2026-05-22 00:50:20,266 - INFO - Completed Scenario: Add Employee Successfully
+2026-05-22 00:50:36,526 - INFO - Browser Closed Successfully
+2026-05-22 00:50:36,529 - INFO - Starting Scenario: Verify Dashboard Page
+2026-05-22 00:50:36,530 - INFO - Launching Browser
+2026-05-22 00:50:36,530 - INFO - Initializing Chrome Browser
+2026-05-22 00:50:37,563 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:50:37,564 - INFO - Opening OrangeHRM Application
+2026-05-22 00:50:40,214 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:50:40,214 - INFO - Performing Login
+2026-05-22 00:50:42,052 - INFO - Login Button Clicked Successfully
+2026-05-22 00:50:42,054 - INFO - Verifying Dashboard Page
+2026-05-22 00:50:42,490 - INFO - Dashboard Verified Successfully
+2026-05-22 00:50:42,490 - INFO - Dashboard Verified Successfully
+2026-05-22 00:50:45,016 - INFO - Browser Closed Successfully
+2026-05-22 00:50:45,016 - INFO - Completed Scenario: Verify Dashboard Page
+2026-05-22 00:51:01,321 - INFO - Browser Closed Successfully
+2026-05-22 00:51:01,323 - INFO - Starting Scenario: Delete Employee Record
+2026-05-22 00:51:01,324 - INFO - Launching Browser
+2026-05-22 00:51:01,324 - INFO - Initializing Chrome Browser
+2026-05-22 00:51:02,368 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:51:02,371 - INFO - Opening OrangeHRM Application
+2026-05-22 00:51:05,082 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:51:05,083 - INFO - Performing Login
+2026-05-22 00:51:07,106 - INFO - Login Button Clicked Successfully
+2026-05-22 00:51:07,107 - INFO - Login Successful
+2026-05-22 00:51:07,109 - INFO - Opening PIM Module
+2026-05-22 00:51:08,749 - INFO - PIM Module Opened Successfully
+2026-05-22 00:51:08,749 - INFO - Opening Employee List
+2026-05-22 00:51:09,737 - INFO - Employee List Opened Successfully
+2026-05-22 00:51:09,739 - INFO - Selecting Employee Record
+2026-05-22 00:51:10,326 - INFO - Employee Record Selected Successfully
+2026-05-22 00:51:10,328 - INFO - Clicking Search Button
+2026-05-22 00:51:10,377 - INFO - Waiting For Loader To Disappear
+2026-05-22 00:51:20,964 - INFO - Employee Table Loaded Successfully
+2026-05-22 00:51:21,074 - INFO - Delete Button Clicked Successfully
+2026-05-22 00:51:21,075 - INFO - Confirming Delete Action
+2026-05-22 00:51:21,144 - INFO - Employee Deleted Successfully
+2026-05-22 00:51:21,145 - INFO - Verifying Employee Delete Success
+2026-05-22 00:51:21,180 - INFO - Employee Delete Verification Successful
+2026-05-22 00:51:21,180 - INFO - Employee Deleted Successfully
+2026-05-22 00:51:23,691 - INFO - Browser Closed Successfully
+2026-05-22 00:51:23,691 - INFO - Completed Scenario: Delete Employee Record
+2026-05-22 00:51:39,918 - INFO - Browser Closed Successfully
+2026-05-22 00:51:39,920 - INFO - Starting Scenario: View Employee List
+2026-05-22 00:51:39,921 - INFO - Launching Browser
+2026-05-22 00:51:39,921 - INFO - Initializing Chrome Browser
+2026-05-22 00:51:40,914 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:51:40,916 - INFO - Opening OrangeHRM Application
+2026-05-22 00:51:43,623 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:51:43,623 - INFO - Performing Login
+2026-05-22 00:51:45,553 - INFO - Login Button Clicked Successfully
+2026-05-22 00:51:45,555 - INFO - Clicking PIM Module
+2026-05-22 00:51:47,217 - INFO - PIM Module Clicked Successfully
+2026-05-22 00:51:47,217 - INFO - Opening Employee List Page
+2026-05-22 00:51:48,407 - INFO - Employee List Page Opened Successfully
+2026-05-22 00:51:48,409 - INFO - Verifying Employee Records
+2026-05-22 00:51:49,712 - INFO - Employee Records Verified Successfully
+2026-05-22 00:51:49,712 - INFO - Employee Records Verified Successfully
+2026-05-22 00:51:52,312 - INFO - Browser Closed Successfully
+2026-05-22 00:51:52,312 - INFO - Completed Scenario: View Employee List
+2026-05-22 00:52:08,569 - INFO - Browser Closed Successfully
+2026-05-22 00:52:08,571 - INFO - Starting Scenario: Reset Password Successfully
+2026-05-22 00:52:08,572 - INFO - Launching Browser
+2026-05-22 00:52:08,572 - INFO - Initializing Chrome Browser
+2026-05-22 00:52:09,590 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:52:09,592 - INFO - Opening OrangeHRM Application
+2026-05-22 00:52:12,402 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:52:12,405 - INFO - Clicking Forgot Password Link
+2026-05-22 00:52:13,309 - INFO - Forgot Password Link Clicked Successfully
+2026-05-22 00:52:13,310 - INFO - Entering Forgot Password Username
+2026-05-22 00:52:13,825 - INFO - Forgot Password Username Entered Successfully
+2026-05-22 00:52:13,826 - INFO - Clicking Reset Password Button
+2026-05-22 00:52:13,891 - INFO - Reset Password Button Clicked Successfully
+2026-05-22 00:52:13,893 - INFO - Verifying Reset Password Message
+2026-05-22 00:53:14,139 - INFO - Reset Password Verified Successfully
+2026-05-22 00:53:14,139 - INFO - Reset Password Verified Successfully
+2026-05-22 00:53:16,806 - INFO - Browser Closed Successfully
+2026-05-22 00:53:16,807 - INFO - Completed Scenario: Reset Password Successfully
+2026-05-22 00:53:33,027 - INFO - Browser Closed Successfully
+2026-05-22 00:53:33,030 - INFO - Starting Scenario: Invalid Login Validation
+2026-05-22 00:53:33,030 - INFO - Launching Browser
+2026-05-22 00:53:33,030 - INFO - Initializing Chrome Browser
+2026-05-22 00:53:34,064 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:53:34,066 - INFO - Opening OrangeHRM Application
+2026-05-22 00:53:36,753 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:53:36,754 - INFO - Performing Login
+2026-05-22 00:53:38,353 - INFO - Login Button Clicked Successfully
+2026-05-22 00:53:38,356 - INFO - Verifying Invalid Login Message
+2026-05-22 00:53:38,714 - INFO - Invalid Login Verified Successfully
+2026-05-22 00:53:38,714 - INFO - Invalid Login Message Verified Successfully
+2026-05-22 00:53:41,320 - INFO - Browser Closed Successfully
+2026-05-22 00:53:41,320 - INFO - Completed Scenario: Invalid Login Validation
+2026-05-22 00:53:57,559 - INFO - Browser Closed Successfully
+2026-05-22 00:53:57,561 - INFO - Starting Scenario: Open Leave Module
+2026-05-22 00:53:57,562 - INFO - Launching Browser
+2026-05-22 00:53:57,562 - INFO - Initializing Chrome Browser
+2026-05-22 00:53:58,601 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:53:58,604 - INFO - Opening OrangeHRM Application
+2026-05-22 00:54:01,423 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:54:01,424 - INFO - Performing Login
+2026-05-22 00:54:03,429 - INFO - Login Button Clicked Successfully
+2026-05-22 00:54:03,431 - INFO - Clicking Leave Menu
+2026-05-22 00:54:05,096 - INFO - Leave Menu Clicked Successfully
+2026-05-22 00:54:05,097 - INFO - Verifying Leave Page
+2026-05-22 00:54:05,496 - INFO - Leave Page Verified Successfully
+2026-05-22 00:54:05,496 - INFO - Leave Page Verified Successfully
+2026-05-22 00:54:07,950 - INFO - Browser Closed Successfully
+2026-05-22 00:54:07,951 - INFO - Completed Scenario: Open Leave Module
+2026-05-22 00:54:24,166 - INFO - Browser Closed Successfully
+2026-05-22 00:54:24,168 - INFO - Starting Scenario: Search Leave Records
+2026-05-22 00:54:24,169 - INFO - Launching Browser
+2026-05-22 00:54:24,169 - INFO - Initializing Chrome Browser
+2026-05-22 00:54:25,182 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:54:25,184 - INFO - Opening OrangeHRM Application
+2026-05-22 00:54:27,909 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:54:27,909 - INFO - Performing Login
+2026-05-22 00:54:29,739 - INFO - Login Button Clicked Successfully
+2026-05-22 00:54:29,741 - INFO - Clicking Leave Menu
+2026-05-22 00:54:31,342 - INFO - Leave Menu Clicked Successfully
+2026-05-22 00:54:31,343 - INFO - Searching Leave Records
+2026-05-22 00:54:41,463 - INFO - Leave Records Search Successful
+2026-05-22 00:54:41,465 - INFO - Verifying Leave Records
+2026-05-22 00:54:41,506 - INFO - Leave Records Verified Successfully
+2026-05-22 00:54:41,506 - INFO - Leave Records Verified Successfully
+2026-05-22 00:54:44,099 - INFO - Browser Closed Successfully
+2026-05-22 00:54:44,100 - INFO - Completed Scenario: Search Leave Records
+2026-05-22 00:55:00,337 - INFO - Browser Closed Successfully
+2026-05-22 00:55:00,340 - INFO - Starting Scenario: Valid Login
+2026-05-22 00:55:00,340 - INFO - Launching Browser
+2026-05-22 00:55:00,340 - INFO - Initializing Chrome Browser
+2026-05-22 00:55:01,361 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:55:01,363 - INFO - Opening OrangeHRM Application
+2026-05-22 00:55:04,290 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:55:04,291 - INFO - Reading Login Data from CSV
+2026-05-22 00:55:04,293 - INFO - Trying Login with Username: Admin
+2026-05-22 00:55:04,293 - INFO - Performing Login
+2026-05-22 00:55:06,207 - INFO - Login Button Clicked Successfully
+2026-05-22 00:55:06,211 - INFO - Verifying Dashboard Page
+2026-05-22 00:55:06,657 - INFO - Dashboard Verified Successfully
+2026-05-22 00:55:06,657 - INFO - Dashboard Verified Successfully
+2026-05-22 00:55:09,264 - INFO - Browser Closed Successfully
+2026-05-22 00:55:09,264 - INFO - Completed Scenario: Valid Login
+2026-05-22 00:55:25,589 - INFO - Browser Closed Successfully
+2026-05-22 00:55:25,591 - INFO - Starting Scenario: Logout Successfully
+2026-05-22 00:55:25,592 - INFO - Launching Browser
+2026-05-22 00:55:25,592 - INFO - Initializing Chrome Browser
+2026-05-22 00:55:26,646 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:55:26,651 - INFO - Opening OrangeHRM Application
+2026-05-22 00:55:30,921 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:55:30,921 - INFO - Performing Login
+2026-05-22 00:55:33,272 - INFO - Login Button Clicked Successfully
+2026-05-22 00:55:33,274 - INFO - Clicking Profile Menu
+2026-05-22 00:55:33,780 - INFO - Profile Menu Clicked Successfully
+2026-05-22 00:55:33,781 - INFO - Clicking Logout Button
+2026-05-22 00:55:35,195 - INFO - Logout Successful
+2026-05-22 00:55:35,196 - INFO - Verifying Login Page
+2026-05-22 00:55:35,570 - INFO - Login Page Verified Successfully
+2026-05-22 00:55:35,570 - INFO - Login Page Verified Successfully
+2026-05-22 00:55:38,051 - INFO - Browser Closed Successfully
+2026-05-22 00:55:38,052 - INFO - Completed Scenario: Logout Successfully
+2026-05-22 00:55:54,364 - INFO - Browser Closed Successfully
+2026-05-22 00:55:54,367 - INFO - Starting Scenario: Open Recruitment Module
+2026-05-22 00:55:54,369 - INFO - Launching Browser
+2026-05-22 00:55:54,369 - INFO - Initializing Chrome Browser
+2026-05-22 00:55:55,404 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:55:55,407 - INFO - Opening OrangeHRM Application
+2026-05-22 00:55:58,032 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:55:58,032 - INFO - Performing Login
+2026-05-22 00:55:59,880 - INFO - Login Button Clicked Successfully
+2026-05-22 00:55:59,882 - INFO - Clicking Recruitment Menu
+2026-05-22 00:56:01,278 - INFO - Recruitment Menu Clicked Successfully
+2026-05-22 00:56:01,279 - INFO - Verifying Recruitment Page
+2026-05-22 00:56:01,747 - INFO - Recruitment Page Verified Successfully
+2026-05-22 00:56:01,747 - INFO - Recruitment Page Verified Successfully
+2026-05-22 00:56:04,319 - INFO - Browser Closed Successfully
+2026-05-22 00:56:04,320 - INFO - Completed Scenario: Open Recruitment Module
+2026-05-22 00:56:20,597 - INFO - Browser Closed Successfully
+2026-05-22 00:56:20,599 - INFO - Starting Scenario: Search Added Employee
+2026-05-22 00:56:20,600 - INFO - Launching Browser
+2026-05-22 00:56:20,601 - INFO - Initializing Chrome Browser
+2026-05-22 00:56:21,656 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:56:21,659 - INFO - Opening OrangeHRM Application
+2026-05-22 00:56:24,264 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:56:24,264 - INFO - Performing Login
+2026-05-22 00:56:26,284 - INFO - Login Button Clicked Successfully
+2026-05-22 00:56:26,286 - INFO - Clicking PIM Module
+2026-05-22 00:56:27,801 - INFO - PIM Module Clicked Successfully
+2026-05-22 00:56:27,802 - INFO - Searching Employee
+2026-05-22 00:56:28,398 - INFO - Employee Name Entered Successfully
+2026-05-22 00:56:28,400 - INFO - Clicking Search Button
+2026-05-22 00:56:28,448 - INFO - Search Button Clicked Successfully
+2026-05-22 00:56:28,449 - INFO - Verifying Employee Record
+2026-05-22 00:56:28,950 - INFO - Employee Record Verified Successfully
+2026-05-22 00:56:28,951 - INFO - Employee Details Verified Successfully
+2026-05-22 00:56:31,594 - INFO - Browser Closed Successfully
+2026-05-22 00:56:31,595 - INFO - Completed Scenario: Search Added Employee
+2026-05-22 00:56:47,769 - INFO - Browser Closed Successfully
+2026-05-22 00:56:47,772 - INFO - Starting Scenario: Search Existing User
+2026-05-22 00:56:47,772 - INFO - Launching Browser
+2026-05-22 00:56:47,772 - INFO - Initializing Chrome Browser
+2026-05-22 00:56:48,771 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:56:48,773 - INFO - Opening OrangeHRM Application
+2026-05-22 00:56:51,742 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:56:51,742 - INFO - Performing Login
+2026-05-22 00:56:53,698 - INFO - Login Button Clicked Successfully
+2026-05-22 00:56:53,700 - INFO - Clicking Admin Menu
+2026-05-22 00:56:55,215 - INFO - Admin Menu Clicked Successfully
+2026-05-22 00:56:55,216 - INFO - Entering Username
+2026-05-22 00:56:55,804 - INFO - Username Entered Successfully
+2026-05-22 00:56:55,805 - INFO - Clicking Search Button
+2026-05-22 00:56:55,866 - INFO - Search Button Clicked Successfully
+2026-05-22 00:56:55,867 - INFO - Verifying User Records
+2026-05-22 00:56:56,061 - INFO - User Records Verified Successfully
+2026-05-22 00:56:56,061 - INFO - User Records Verified Successfully
+2026-05-22 00:56:58,553 - INFO - Browser Closed Successfully
+2026-05-22 00:56:58,554 - INFO - Completed Scenario: Search Existing User
+2026-05-22 00:57:14,791 - INFO - Browser Closed Successfully
+2026-05-22 00:57:14,793 - INFO - Starting Scenario: Update Employee Details
+2026-05-22 00:57:14,794 - INFO - Launching Browser
+2026-05-22 00:57:14,794 - INFO - Initializing Chrome Browser
+2026-05-22 00:57:15,871 - INFO - Chrome Browser Launched Successfully
+2026-05-22 00:57:15,873 - INFO - Opening OrangeHRM Application
+2026-05-22 00:57:18,763 - INFO - OrangeHRM Application Opened Successfully
+2026-05-22 00:57:18,763 - INFO - Performing Login
+2026-05-22 00:57:20,972 - INFO - Login Button Clicked Successfully
+2026-05-22 00:57:20,974 - INFO - Clicking PIM Menu
+2026-05-22 00:57:22,702 - INFO - PIM Menu Clicked Successfully
+2026-05-22 00:57:22,703 - INFO - Opening Employee Record
+2026-05-22 00:57:24,193 - INFO - Employee Record Opened Successfully
+2026-05-22 00:57:24,194 - INFO - Updating Employee Details
+2026-05-22 00:57:24,796 - INFO - Employee Details Updated Successfully
+2026-05-22 00:57:24,797 - INFO - Clicking Save Button
+2026-05-22 00:57:35,935 - INFO - Save Button Clicked Successfully
+2026-05-22 00:57:35,936 - INFO - Verifying Employee Update
+2026-05-22 00:57:35,972 - INFO - Employee Updated Successfully
+2026-05-22 00:57:35,972 - INFO - Employee Updated Successfully
+2026-05-22 00:57:38,538 - INFO - Browser Closed Successfully

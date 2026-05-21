@@ -1,0 +1,1168 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/add_employee.feature:5",
+      "name": "Add Employee Successfully",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/add_employee.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/add_employee_steps.py:16"
+          },
+          "name": "admin is logged into OrangeHRM",
+          "result": {
+            "duration": 4.969790458679199,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/add_employee.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/add_employee_steps.py:37"
+          },
+          "name": "admin clicks PIM menu",
+          "result": {
+            "duration": 2.6479909420013428,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/add_employee.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/add_employee_steps.py:44"
+          },
+          "name": "admin clicks Add Employee button",
+          "result": {
+            "duration": 1.121582269668579,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/add_employee.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/add_employee_steps.py:51"
+          },
+          "name": "admin enters firstname and lastname",
+          "result": {
+            "duration": 0.8506934642791748,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/add_employee.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/add_employee_steps.py:58"
+          },
+          "name": "admin clicks Save",
+          "result": {
+            "duration": 10.094538927078247,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/add_employee.feature:12",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/add_employee_steps.py:65"
+          },
+          "name": "employee added successfully",
+          "result": {
+            "duration": 7.36448860168457,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/add_employee.feature:3",
+  "name": "Add Employee Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/dashboard_validation.feature:6",
+      "name": "Verify Dashboard Page",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/dashboard_validation.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/dashboard_validation_steps.py:16"
+          },
+          "name": "admin successfully logged into OrangeHRM",
+          "result": {
+            "duration": 5.523715496063232,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/dashboard_validation.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/dashboard_validation_steps.py:39"
+          },
+          "name": "dashboard page should be displayed",
+          "result": {
+            "duration": 2.962830066680908,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/dashboard_validation.feature:4",
+  "name": "Dashboard Validation",
+  "status": "passed",
+  "tags": [
+    "smoke",
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/delete_employee.feature:5",
+      "name": "Delete Employee Record",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/delete_employee.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/delete_employee_steps.py:16"
+          },
+          "name": "admin logged into OrangeHRM portal",
+          "result": {
+            "duration": 5.783883333206177,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/delete_employee.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/delete_employee_steps.py:39"
+          },
+          "name": "admin opens PIM module for delete",
+          "result": {
+            "duration": 2.629868268966675,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/delete_employee.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/delete_employee_steps.py:48"
+          },
+          "name": "admin selects employee record",
+          "result": {
+            "duration": 0.5889120101928711,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/delete_employee.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/delete_employee_steps.py:55"
+          },
+          "name": "admin clicks delete button",
+          "result": {
+            "duration": 10.747204542160034,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/delete_employee.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/delete_employee_steps.py:62"
+          },
+          "name": "admin confirms delete action",
+          "result": {
+            "duration": 0.06951332092285156,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/delete_employee.feature:12",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/delete_employee_steps.py:69"
+          },
+          "name": "employee record should delete successfully",
+          "result": {
+            "duration": 2.5467817783355713,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/delete_employee.feature:3",
+  "name": "Delete Employee Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/employee_list.feature:5",
+      "name": "View Employee List",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/employee_list.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/employee_list_steps.py:16"
+          },
+          "name": "admin logged into OrangeHRM for employee list",
+          "result": {
+            "duration": 5.633296251296997,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/employee_list.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/employee_list_steps.py:37"
+          },
+          "name": "admin clicks PIM menu for employee list",
+          "result": {
+            "duration": 1.662574291229248,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/employee_list.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/employee_list_steps.py:44"
+          },
+          "name": "admin opens employee list page",
+          "result": {
+            "duration": 1.1901040077209473,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/employee_list.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/employee_list_steps.py:51"
+          },
+          "name": "employee records should display successfully",
+          "result": {
+            "duration": 3.9046566486358643,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/employee_list.feature:3",
+  "name": "Employee List Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/forgot_password.feature:5",
+      "name": "Reset Password Successfully",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/forgot_password.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/forgot_password_steps.py:12"
+          },
+          "name": "user is on OrangeHRM login page",
+          "result": {
+            "duration": 3.8304872512817383,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/forgot_password.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/forgot_password_steps.py:29"
+          },
+          "name": "user clicks forgot password link",
+          "result": {
+            "duration": 0.90679931640625,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/forgot_password.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/forgot_password_steps.py:36"
+          },
+          "name": "user enters username",
+          "result": {
+            "duration": 0.5152513980865479,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/forgot_password.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/forgot_password_steps.py:43"
+          },
+          "name": "user clicks reset password button",
+          "result": {
+            "duration": 0.06658315658569336,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/forgot_password.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/forgot_password_steps.py:50"
+          },
+          "name": "reset password message should display",
+          "result": {
+            "duration": 62.914480447769165,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/forgot_password.feature:3",
+  "name": "Forgot Password Functionality",
+  "status": "passed",
+  "tags": [
+    "smoke",
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/invalid_login.feature:6",
+      "name": "Invalid Login Validation",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/invalid_login.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/invalid_login_steps.py:12"
+          },
+          "name": "user opens OrangeHRM login page",
+          "result": {
+            "duration": 3.7230794429779053,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/invalid_login.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/invalid_login_steps.py:29"
+          },
+          "name": "user enters invalid username and password",
+          "result": {
+            "duration": 1.5997793674468994,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/invalid_login.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/invalid_login_steps.py:39"
+          },
+          "name": "user clicks login button",
+          "result": {
+            "duration": 0.0010075569152832031,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/invalid_login.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/invalid_login_steps.py:46"
+          },
+          "name": "invalid credentials message should display",
+          "result": {
+            "duration": 2.9651806354522705,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/invalid_login.feature:4",
+  "name": "Invalid Login Functionality",
+  "status": "passed",
+  "tags": [
+    "smoke",
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/leave_apply.feature:5",
+      "name": "Open Leave Module",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/leave_apply.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_apply_steps.py:16"
+          },
+          "name": "employee logged into OrangeHRM",
+          "result": {
+            "duration": 5.8689820766448975,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/leave_apply.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_apply_steps.py:39"
+          },
+          "name": "employee clicks Leave menu",
+          "result": {
+            "duration": 1.6659109592437744,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/leave_apply.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_apply_steps.py:46"
+          },
+          "name": "leave page should display",
+          "result": {
+            "duration": 2.8535616397857666,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/leave_apply.feature:3",
+  "name": "Leave Module",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/leave_search.feature:5",
+      "name": "Search Leave Records",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/leave_search.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_search_steps.py:16"
+          },
+          "name": "admin logged into OrangeHRM for leave search",
+          "result": {
+            "duration": 5.571176290512085,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/leave_search.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_search_steps.py:37"
+          },
+          "name": "admin clicks Leave menu",
+          "result": {
+            "duration": 1.601646900177002,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/leave_search.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_search_steps.py:44"
+          },
+          "name": "admin searches leave records",
+          "result": {
+            "duration": 10.121007204055786,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/leave_search.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/leave_search_steps.py:51"
+          },
+          "name": "leave records should display successfully",
+          "result": {
+            "duration": 2.635615348815918,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/leave_search.feature:3",
+  "name": "Leave Search Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:6",
+      "name": "Valid Login",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_steps.py:16"
+          },
+          "name": "user is on login page",
+          "result": {
+            "duration": 3.9498114585876465,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_steps.py:31"
+          },
+          "name": "user enters valid username and password",
+          "result": {
+            "duration": 1.9178709983825684,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_steps.py:57"
+          },
+          "name": "clicks login button",
+          "result": {
+            "duration": 0.0012767314910888672,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_steps.py:64"
+          },
+          "name": "user should navigate to dashboard",
+          "result": {
+            "duration": 3.053814649581909,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/login.feature:4",
+  "name": "Login Functionality",
+  "status": "passed",
+  "tags": [
+    "smoke",
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/logout.feature:6",
+      "name": "Logout Successfully",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/logout.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/logout_steps.py:16"
+          },
+          "name": "user logged into OrangeHRM",
+          "result": {
+            "duration": 7.6818742752075195,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/logout.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/logout_steps.py:37"
+          },
+          "name": "user clicks profile menu",
+          "result": {
+            "duration": 0.5067903995513916,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/logout.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/logout_steps.py:44"
+          },
+          "name": "user clicks logout option",
+          "result": {
+            "duration": 1.4150493144989014,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/logout.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/logout_steps.py:51"
+          },
+          "name": "login page should display",
+          "result": {
+            "duration": 2.8556973934173584,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/logout.feature:4",
+  "name": "Logout Functionality",
+  "status": "passed",
+  "tags": [
+    "smoke",
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/recruitment.feature:5",
+      "name": "Open Recruitment Module",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/recruitment.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/recruitment_steps.py:16"
+          },
+          "name": "admin logged into recruitment page",
+          "result": {
+            "duration": 5.513094663619995,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/recruitment.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/recruitment_steps.py:39"
+          },
+          "name": "admin clicks Recruitment menu",
+          "result": {
+            "duration": 1.396435260772705,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/recruitment.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/recruitment_steps.py:46"
+          },
+          "name": "recruitment page should display",
+          "result": {
+            "duration": 3.041456699371338,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/recruitment.feature:3",
+  "name": "Recruitment Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/search_employee.feature:5",
+      "name": "Search Added Employee",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/search_employee.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_employee_steps.py:16"
+          },
+          "name": "admin logged into OrangeHRM",
+          "result": {
+            "duration": 5.685153007507324,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/search_employee.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_employee_steps.py:37"
+          },
+          "name": "admin opens PIM module",
+          "result": {
+            "duration": 1.5157225131988525,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/search_employee.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_employee_steps.py:44"
+          },
+          "name": "admin searches employee name",
+          "result": {
+            "duration": 0.5973198413848877,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/search_employee.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_employee_steps.py:51"
+          },
+          "name": "admin clicks search button",
+          "result": {
+            "duration": 0.04888582229614258,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/search_employee.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_employee_steps.py:58"
+          },
+          "name": "employee details should display",
+          "result": {
+            "duration": 3.1464436054229736,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/search_employee.feature:3",
+  "name": "Search Employee Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/search_user.feature:5",
+      "name": "Search Existing User",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/search_user.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_user_steps.py:16"
+          },
+          "name": "admin logged into OrangeHRM application",
+          "result": {
+            "duration": 5.927412509918213,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/search_user.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_user_steps.py:39"
+          },
+          "name": "admin clicks Admin menu",
+          "result": {
+            "duration": 1.5152802467346191,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/search_user.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_user_steps.py:46"
+          },
+          "name": "admin enters username in search",
+          "result": {
+            "duration": 0.5893990993499756,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/search_user.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_user_steps.py:53"
+          },
+          "name": "admin clicks user search button",
+          "result": {
+            "duration": 0.06174278259277344,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/search_user.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/search_user_steps.py:60"
+          },
+          "name": "user records should display",
+          "result": {
+            "duration": 2.687016248703003,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/search_user.feature:3",
+  "name": "Search User Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/update_employee.feature:5",
+      "name": "Update Employee Details",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/update_employee.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/update_employee_steps.py:16"
+          },
+          "name": "admin logged into OrangeHRM system",
+          "result": {
+            "duration": 6.1796650886535645,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/update_employee.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/update_employee_steps.py:39"
+          },
+          "name": "admin opens PIM module for update",
+          "result": {
+            "duration": 1.7287113666534424,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/update_employee.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/update_employee_steps.py:46"
+          },
+          "name": "admin opens employee record",
+          "result": {
+            "duration": 1.4909164905548096,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/update_employee.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/update_employee_steps.py:53"
+          },
+          "name": "admin updates employee details",
+          "result": {
+            "duration": 0.6024689674377441,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/update_employee.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/update_employee_steps.py:60"
+          },
+          "name": "admin clicks save button",
+          "result": {
+            "duration": 11.138912677764893,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/update_employee.feature:12",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/update_employee_steps.py:67"
+          },
+          "name": "employee details should update successfully",
+          "result": {
+            "duration": 2.60288143157959,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/update_employee.feature:3",
+  "name": "Update Employee Functionality",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+}
+]

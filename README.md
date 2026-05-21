@@ -1,3 +1,5 @@
+![CI](https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python/actions/workflows/automation.yml/badge.svg)
+
 # OrangeHRM Selenium Python Automation Framework
 
 ## Project Overview
@@ -42,6 +44,49 @@ The project covers both UI Automation Testing and API Testing using modern autom
 | JSON               | API Validation              |
 | Logging Module     | Execution Logging           |
 | pytest-xdist       | Parallel Execution Support  |
+
+---
+
+# Framework Architecture
+
+```text
+PyAutomation Crew
+       │
+       ▼
+Feature Files (BDD - Gherkin)
+       │
+       ▼
+Step Definitions (Behave)
+       │
+       ▼
+Page Object Model (POM)
+       │
+       ▼
+Reusable Utilities
+(driver setup, logger, config)
+       │
+       ▼
+Selenium WebDriver
+       │
+       ▼
+OrangeHRM Application
+       │
+       ▼
+Allure Reports / Logs / Screenshots
+       │
+       ▼
+GitHub Actions CI/CD
+```
+
+## Architecture Explanation
+
+* Feature files contain business scenarios using Given-When-Then syntax.
+* Step definition files implement automation logic for feature steps.
+* Page Object Model (POM) handles web elements and reusable page actions.
+* Utility files manage reusable configurations like browser setup, logging, and credentials.
+* Selenium WebDriver performs browser automation.
+* Allure Reports generate execution insights and graphical reports.
+* GitHub Actions provides CI/CD pipeline automation.
 
 ---
 
@@ -244,6 +289,18 @@ Workflow file location:
 
 ---
 
+# Defect Handling
+
+The framework includes sample defect reporting documentation to demonstrate defect identification, severity classification, and reporting workflow followed in real-time QA processes.
+
+Defect report file:
+
+```text
+defect_report.md
+```
+
+---
+
 # Project Structure
 
 ```text
@@ -254,7 +311,6 @@ OrangeHRM-Selenium-Python/
 │       └── automation.yml
 │
 ├── allure-report/
-├── allure-results/
 │
 ├── drivers/
 │   └── chromedriver.exe
@@ -263,9 +319,6 @@ OrangeHRM-Selenium-Python/
 │   ├── steps/
 │   ├── environment.py
 │   └── *.feature
-│
-├── logs/
-│   └── automation.log
 │
 ├── newman/
 ├── pages/
@@ -280,6 +333,7 @@ OrangeHRM-Selenium-Python/
 │   ├── driver_setup.py
 │   └── logger.py
 │
+├── defect_report.md
 ├── .gitignore
 ├── README.md
 ├── behave.ini
@@ -295,7 +349,7 @@ OrangeHRM-Selenium-Python/
 ## Step 1: Clone Repository
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python.git
 ```
 
 ---
@@ -389,6 +443,7 @@ After pushing code to GitHub:
 * CI/CD Integration
 * Logging Support
 * Parallel Execution Support
+* Smoke & Regression Execution Support
 
 ---
 
@@ -399,6 +454,8 @@ The framework successfully automates:
 * 14 Features
 * 14 Scenarios
 * 61 Steps
+* Smoke & Regression Execution Supported
+* CI/CD Workflow Execution Successful
 
 ---
 
