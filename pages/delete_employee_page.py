@@ -86,7 +86,7 @@ class DeleteEmployeePage:
 
             employee_box.clear()
 
-            employee_box.send_keys("manda")
+            employee_box.send_keys("Deepak")
 
             logger.info("Employee Record Selected Successfully")
 
@@ -117,6 +117,17 @@ class DeleteEmployeePage:
                 search_btn
             )
 
+            logger.info("Waiting For Loader To Disappear")
+
+            self.wait.until(
+                EC.invisibility_of_element_located(
+                    (
+                        By.CLASS_NAME,
+                        "oxd-loading-spinner"
+                    )
+                )
+            )
+
             self.wait.until(
                 EC.presence_of_element_located(
                     (
@@ -140,6 +151,15 @@ class DeleteEmployeePage:
             self.driver.execute_script(
                 "arguments[0].scrollIntoView({block:'center'});",
                 delete_btn
+            )
+
+            self.wait.until(
+                EC.element_to_be_clickable(
+                    (
+                        By.XPATH,
+                        "(//i[contains(@class,'bi-trash')])[1]"
+                    )
+                )
             )
 
             self.driver.execute_script(
