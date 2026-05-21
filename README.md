@@ -1,10 +1,12 @@
 # OrangeHRM Selenium Python Automation Framework
 
+---
+
 ## Project Overview
 
-This project is an end-to-end automation testing framework developed for the OrangeHRM application using Selenium, Python, Behave BDD, Allure Reporting, Postman, and Newman.
+This project is an end-to-end automation testing framework developed for the OrangeHRM application using Selenium, Python, Behave BDD, Allure Reporting, Postman, Newman, and GitHub Actions.
 
-The framework follows the Page Object Model (POM) design pattern to improve maintainability, scalability, reusability, and stable automation execution.
+The framework follows the Page Object Model (POM) design pattern to improve maintainability, scalability, reusability, synchronization handling, and stable automation execution.
 
 ---
 
@@ -17,17 +19,20 @@ The framework follows the Page Object Model (POM) design pattern to improve main
 * Postman API Testing
 * Newman CLI Reporting
 * Git & GitHub
+* GitHub Actions
 * Visual Studio Code
 * Chrome Browser
 * ChromeDriver
-* WebDriver Manager
 * Page Object Model (POM)
 * Explicit Waits
 * Gherkin Syntax
 * JSON
+* CSV
 * Virtual Environment (venv)
 * REST API Testing
 * Modular Framework Design
+* Python Logging Module
+* pytest-xdist
 
 ---
 
@@ -75,6 +80,19 @@ The framework follows the Page Object Model (POM) design pattern to improve main
 * Allure Reporting Integration
 * API Testing using Postman
 * Newman CLI Execution
+* Logging Framework Integration
+* Try-Catch Exception Handling
+* Assertions and Validation Handling
+* False Failure & False Pass Reduction
+* Data Driven Testing (DDT) using CSV
+* Reusable Driver Initialization
+* Synchronization Handling using Explicit Waits
+* Parallel Execution Support using pytest-xdist
+* Basic CI/CD Pipeline using GitHub Actions
+* Stable URL-Based Verification
+* JavaScript Executor Click Handling
+* Professional Logging Strategy
+* Dynamic Wait Handling
 
 ---
 
@@ -107,20 +125,41 @@ The framework follows the Page Object Model (POM) design pattern to improve main
 ```text
 OrangeHRM-Selenium-Python/
 │
+├── .github/
+│   └── workflows/
+│       └── automation.yml
+│
+├── drivers/
+│   └── chromedriver.exe
+│
 ├── features/
-│   └── steps/
+│   ├── steps/
+│   ├── environment.py
+│   └── *.feature
+│
+├── logs/
+│   └── automation.log
+│
 ├── pages/
+│
 ├── utils/
+│   ├── driver_setup.py
+│   ├── config.py
+│   └── logger.py
+│
+├── testdata/
+│   └── login_data.csv
+│
 ├── allure-results/
 ├── allure-report/
 ├── postman/
 ├── newman/
 ├── screenshots/
+│
 ├── behave.ini
 ├── requirements.txt
 └── README.md
 ```
-
 ---
 
 ## Setup Instructions
@@ -128,7 +167,7 @@ OrangeHRM-Selenium-Python/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python.git
+git clone https://github.com/your-username/OrangeHRM-Selenium-Python.git
 ```
 
 ---
@@ -157,7 +196,7 @@ pip install -r requirements.txt
 
 ---
 
-## Run Automation Tests
+## Execution Commands
 
 ### Run Behave Tests
 
@@ -166,8 +205,6 @@ behave
 ```
 
 ---
-
-## Allure Report Setup
 
 ### Generate Allure Report
 
@@ -204,6 +241,28 @@ newman run "OrangeHRM API Testing.postman_collection.json"
 
 ---
 
+## CI/CD Pipeline Setup
+
+### GitHub Actions Workflow
+
+The framework includes a basic CI/CD pipeline using GitHub Actions for automated execution.
+
+Workflow File Path:
+
+```text
+.github/workflows/automation.yml
+```
+
+The pipeline performs:
+
+* Repository Checkout
+* Python Setup
+* Dependency Installation
+* Behave Test Execution
+* Allure Report Generation
+
+---
+
 ## Framework Highlights
 
 * End-to-End Test Automation
@@ -216,6 +275,13 @@ newman run "OrangeHRM API Testing.postman_collection.json"
 * Git Branching & Merge Workflow
 * Smoke & Regression Test Execution
 * API Automation with Newman Reporting
+* Logging and Exception Handling Framework
+* Stable Synchronization using Explicit Waits
+* False Failure Reduction Mechanism
+* Basic Data Driven Testing using CSV
+* Reusable Utilities and Modular Components
+* Parallel Execution Support using pytest-xdist
+* Basic CI/CD Pipeline using GitHub Actions
 
 ---
 
@@ -227,6 +293,7 @@ newman run "OrangeHRM API Testing.postman_collection.json"
 * Postman Login API Success
 * VS Code Project Structure
 * GitHub Repository Structure
+* GitHub Actions Workflow Execution
 
 ---
 

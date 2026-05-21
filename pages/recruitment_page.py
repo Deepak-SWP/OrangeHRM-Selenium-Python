@@ -4,8 +4,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.support import expected_conditions as EC
 
+from utils.logger import logger
+
 
 class RecruitmentPage:
+    """Recruitment Module Functionality"""
 
     recruitment_menu = (
         By.XPATH,
@@ -24,17 +27,55 @@ class RecruitmentPage:
         self.wait = WebDriverWait(driver, 20)
 
     def click_recruitment(self):
+        """Click Recruitment Menu"""
 
-        self.wait.until(
-            EC.element_to_be_clickable(
-                self.recruitment_menu
+        try:
+
+            logger.info("Clicking Recruitment Menu")
+
+            recruitment = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.recruitment_menu
+                )
             )
-        ).click()
+
+            self.driver.execute_script(
+                "arguments[0].click();",
+                recruitment
+            )
+
+            logger.info("Recruitment Menu Clicked Successfully")
+
+        except Exception as e:
+
+            logger.error(f"Recruitment Menu Click Failed: {e}")
+
+            raise
 
     def verify_recruitment_page(self):
+        """Verify Recruitment Page"""
 
-        return self.wait.until(
-            EC.visibility_of_element_located(
-                self.recruitment_text
+        try:
+
+            logger.info("Verifying Recruitment Page")
+
+            self.wait.until(
+                EC.visibility_of_element_located(
+                    self.recruitment_text
+                )
             )
-        ).is_displayed()
+
+            result = (
+                "recruitment"
+                in self.driver.current_url.lower()
+            )
+
+            logger.info("Recruitment Page Verified Successfully")
+
+            return result
+
+        except Exception as e:
+
+            logger.error(f"Recruitment Page Verification Failed: {e}")
+
+            return False

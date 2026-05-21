@@ -1,78 +1,77 @@
 import allure
+
 from behave import given, when, then
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+
+from utils.driver_setup import get_driver
+
+from utils.config import USERNAME, PASSWORD
+
+from pages.login_page import LoginPage
 
 from pages.delete_employee_page import DeleteEmployeePage
+
+from utils.logger import logger
 
 
 @allure.feature("PIM Module")
 @allure.story("Delete Employee Record")
 @given('admin logged into OrangeHRM portal')
 def step_impl(context):
+    """Login to OrangeHRM Application"""
 
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install())
+    logger.info("Launching Browser")
+
+    context.driver = get_driver()
+
+    login = LoginPage(context.driver)
+
+    login.open()
+
+    login.login(USERNAME, PASSWORD)
+
+    context.delete = DeleteEmployeePage(
+        context.driver
     )
-
-    driver.maximize_window()
-
-    driver.get(
-        "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    )
-
-    context.driver = driver
-
-    context.delete = DeleteEmployeePage(driver)
-
-    context.delete.wait.until(
-        lambda d: d.find_element("name", "username")
-    ).send_keys("Admin")
-
-    context.driver.find_element(
-        "name",
-        "password"
-    ).send_keys("admin123")
-
-    context.driver.find_element(
-        "xpath",
-        "//button[@type='submit']"
-    ).click()
-
 
 
 @when('admin opens PIM module for delete')
 def step_impl(context):
+    """Open PIM Module and Employee List"""
 
     context.delete.open_pim()
+
     context.delete.open_employee_list()
 
 
 @when('admin selects employee record')
 def step_impl(context):
+    """Select Employee Record"""
 
     context.delete.select_employee_record()
 
 
-
 @when('admin clicks delete button')
 def step_impl(context):
+    """Click Delete Button"""
 
     context.delete.click_delete_button()
 
 
-
 @when('admin confirms delete action')
 def step_impl(context):
+    """Confirm Delete Action"""
 
     context.delete.confirm_delete_action()
 
 
-
 @then('employee record should delete successfully')
 def step_impl(context):
+    """Verify Employee Delete Success"""
 
     assert context.delete.verify_delete_success()
 
+    logger.info("Employee Deleted Successfully")
+
     context.driver.quit()
+
+    logger.info("Browser Closed Successfully")

@@ -1,70 +1,61 @@
 import allure
+
 from behave import given, when, then
 
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from utils.driver_setup import get_driver
 
-from webdriver_manager.chrome import ChromeDriverManager
+from utils.config import USERNAME, PASSWORD
+
+from pages.login_page import LoginPage
 
 from pages.employee_list_page import EmployeeListPage
+
+from utils.logger import logger
 
 
 @allure.feature("PIM Module")
 @allure.story("View Employee List")
 @given('admin logged into OrangeHRM for employee list')
 def step_impl(context):
+    """Login to OrangeHRM Application"""
 
-    driver = webdriver.Chrome(
-        service=Service(
-            ChromeDriverManager().install()
-        )
+    logger.info("Launching Browser")
+
+    context.driver = get_driver()
+
+    login = LoginPage(context.driver)
+
+    login.open()
+
+    login.login(USERNAME, PASSWORD)
+
+    context.employee = EmployeeListPage(
+        context.driver
     )
-
-    driver.maximize_window()
-
-    driver.get(
-        "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    )
-
-    context.driver = driver
-
-    context.employee = EmployeeListPage(driver)
-
-    context.employee.wait.until(
-        lambda d: d.find_element(
-            "name",
-            "username"
-        )
-    ).send_keys("Admin")
-
-    context.driver.find_element(
-        "name",
-        "password"
-    ).send_keys("admin123")
-
-    context.driver.find_element(
-        "xpath",
-        "//button[@type='submit']"
-    ).click()
 
 
 @when('admin clicks PIM menu for employee list')
 def step_impl(context):
+    """Click PIM Menu"""
 
     context.employee.click_pim()
 
 
-
 @when('admin opens employee list page')
 def step_impl(context):
+    """Open Employee List Page"""
 
     context.employee.open_employee_list()
 
 
-
 @then('employee records should display successfully')
 def step_impl(context):
+    """Verify Employee Records"""
 
     assert context.employee.verify_employee_records()
 
+    logger.info("Employee Records Verified Successfully")
+
     context.driver.quit()
+
+    logger.info("Browser Closed Successfully")

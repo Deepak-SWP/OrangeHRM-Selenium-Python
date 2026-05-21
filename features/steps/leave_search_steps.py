@@ -1,71 +1,61 @@
 import allure
+
 from behave import given, when, then
 
-from selenium import webdriver
+from utils.driver_setup import get_driver
 
-from selenium.webdriver.chrome.service import Service
+from utils.config import USERNAME, PASSWORD
 
-from webdriver_manager.chrome import ChromeDriverManager
+from pages.login_page import LoginPage
 
 from pages.leave_search_page import LeaveSearchPage
+
+from utils.logger import logger
 
 
 @allure.feature("Leave Module")
 @allure.story("Search Leave Records")
 @given('admin logged into OrangeHRM for leave search')
 def step_impl(context):
+    """Login to OrangeHRM Application"""
 
-    driver = webdriver.Chrome(
-        service=Service(
-            ChromeDriverManager().install()
-        )
+    logger.info("Launching Browser")
+
+    context.driver = get_driver()
+
+    login = LoginPage(context.driver)
+
+    login.open()
+
+    login.login(USERNAME, PASSWORD)
+
+    context.leave = LeaveSearchPage(
+        context.driver
     )
-
-    driver.maximize_window()
-
-    driver.get(
-        "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    )
-
-    context.driver = driver
-
-    context.leave = LeaveSearchPage(driver)
-
-    context.leave.wait.until(
-        lambda d: d.find_element(
-            "name",
-            "username"
-        )
-    ).send_keys("Admin")
-
-    context.driver.find_element(
-        "name",
-        "password"
-    ).send_keys("admin123")
-
-    context.driver.find_element(
-        "xpath",
-        "//button[@type='submit']"
-    ).click()
-
 
 
 @when('admin clicks Leave menu')
 def step_impl(context):
+    """Click Leave Menu"""
 
     context.leave.click_leave()
 
 
-
 @when('admin searches leave records')
 def step_impl(context):
+    """Search Leave Records"""
 
     context.leave.search_leave_records()
 
 
 @then('leave records should display successfully')
 def step_impl(context):
+    """Verify Leave Records"""
 
     assert context.leave.verify_leave_records()
 
+    logger.info("Leave Records Verified Successfully")
+
     context.driver.quit()
+
+    logger.info("Browser Closed Successfully")
