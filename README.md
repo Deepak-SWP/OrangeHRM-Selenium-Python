@@ -1,3 +1,4 @@
+````md
 ![CI](https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python/actions/workflows/automation.yml/badge.svg)
 
 # OrangeHRM Selenium Python Automation Framework
@@ -32,13 +33,13 @@ The project covers both UI Automation Testing and API Testing using modern autom
 | Selenium WebDriver | UI Automation               |
 | Behave BDD         | Behavior Driven Development |
 | Allure Reports     | Reporting                   |
+| HTML Reports       | Execution Reporting         |
 | Postman            | API Testing                 |
 | Newman             | Postman CLI Execution       |
 | Git & GitHub       | Version Control             |
 | GitHub Actions     | CI/CD Pipeline              |
 | VS Code            | IDE                         |
 | Chrome Browser     | Test Execution              |
-| ChromeDriver       | Browser Driver              |
 | WebDriver Manager  | Driver Management           |
 | CSV                | Data Driven Testing         |
 | JSON               | API Validation              |
@@ -72,11 +73,11 @@ Selenium WebDriver
 OrangeHRM Application
        │
        ▼
-Allure Reports / Logs / Screenshots
+Allure Reports / HTML Reports / Logs / Screenshots
        │
        ▼
 GitHub Actions CI/CD
-```
+````
 
 ## Architecture Explanation
 
@@ -85,80 +86,8 @@ GitHub Actions CI/CD
 * Page Object Model (POM) handles web elements and reusable page actions.
 * Utility files manage reusable configurations like browser setup, logging, and credentials.
 * Selenium WebDriver performs browser automation.
-* Allure Reports generate execution insights and graphical reports.
+* Allure Reports and HTML Reports generate execution insights and graphical reports.
 * GitHub Actions provides CI/CD pipeline automation.
-
----
-
-# Framework Design
-
-The framework follows the Page Object Model (POM) design pattern.
-
-## Framework Components
-
-### 1. Feature Files
-
-Feature files are written using Gherkin syntax.
-
-These files contain:
-
-* Scenarios
-* Given
-* When
-* Then steps
-
-Example:
-
-```gherkin
-Feature: Login Functionality
-
-Scenario: Valid Login
-
-Given user is on login page
-When user enters valid username and password
-Then user should navigate to dashboard
-```
-
----
-
-### 2. Step Definition Files
-
-Step definition files contain Python code implementation for feature file steps.
-
-These files connect feature file steps with automation code.
-
----
-
-### 3. Page Object Model (POM)
-
-Each application page has a separate Python class.
-
-Examples:
-
-* Login Page
-* Dashboard Page
-* Employee Page
-* Leave Page
-* Recruitment Page
-
-POM helps in:
-
-* Reusability
-* Better maintenance
-* Reduced code duplication
-* Easy locator management
-
----
-
-### 4. Utility Files
-
-Utility files contain reusable common functionalities.
-
-Examples:
-
-* Driver setup
-* Logging
-* Configuration handling
 
 ---
 
@@ -228,14 +157,20 @@ Allure Reports provide:
 * Suites
 * Packages
 
-## Newman Reports
+## HTML Reports
 
-Newman Reports provide:
+HTML reports provide:
 
-* Request Summary
-* API Response Validation
-* Assertion Results
-* Execution Summary
+* Scenario Execution Details
+* Pass/Fail Status
+* Step Execution Summary
+* Clean Professional UI
+
+Report Location:
+
+```text
+html-report/report.html
+```
 
 ---
 
@@ -311,20 +246,24 @@ OrangeHRM-Selenium-Python/
 │       └── automation.yml
 │
 ├── allure-report/
-│
-├── drivers/
-│   └── chromedriver.exe
+├── allure-results/
 │
 ├── features/
 │   ├── steps/
 │   ├── environment.py
 │   └── *.feature
 │
+├── html-report/
+│   └── report.html
+│
+├── logs/
+│   └── automation.log
+│
 ├── newman/
 ├── pages/
 ├── postman/
-│
 ├── screenshots/
+│
 ├── testdata/
 │   └── login_data.csv
 │
@@ -334,12 +273,10 @@ OrangeHRM-Selenium-Python/
 │   └── logger.py
 │
 ├── defect_report.md
-├── .gitignore
 ├── README.md
-├── behave.ini
 ├── requirements.txt
-│
-└── automation.log
+├── behave.ini
+└── .gitignore
 ```
 
 ---
@@ -404,6 +341,22 @@ behave features/login.feature
 
 ---
 
+# Generate HTML Report
+
+```bash
+behave -f behave_html_pretty_formatter:PrettyHTMLFormatter -o html-report/report.html
+```
+
+---
+
+# Open HTML Report
+
+```text
+html-report/report.html
+```
+
+---
+
 # Generate Allure Report
 
 ## Generate Report
@@ -464,3 +417,6 @@ The framework successfully automates:
 This project demonstrates a complete automation testing framework using Selenium Python with BDD framework integration, reporting tools, API testing, reusable framework architecture, logging, CI/CD pipeline, and professional automation practices.
 
 The framework is designed to simulate real-time industry automation testing standards and improve software quality through automated validation.
+
+```
+```
