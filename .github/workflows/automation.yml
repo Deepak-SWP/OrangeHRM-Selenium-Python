@@ -5,9 +5,33 @@ on:
     branches:
       - main
 
+    paths-ignore:
+      - 'README.md'
+      - 'screenshots/**'
+      - 'reports/**'
+      - 'allure-results/**'
+      - 'allure-report/**'
+      - '*.png'
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.gif'
+      - '.gitignore'
+
   pull_request:
     branches:
       - main
+
+    paths-ignore:
+      - 'README.md'
+      - 'screenshots/**'
+      - 'reports/**'
+      - 'allure-results/**'
+      - 'allure-report/**'
+      - '*.png'
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.gif'
+      - '.gitignore'
 
 jobs:
   test:
