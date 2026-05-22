@@ -68,7 +68,7 @@ def step_impl(context):
 
     assert context.employee.verify_employee_added()
 
-    logger.info("Employee Added Successfully")
+    
 
     context.driver.quit()
 

@@ -8,6 +8,8 @@ from utils.logger import logger
 
 import random
 
+import time
+
 
 class EmployeePage:
     """Employee Management Functionality"""
@@ -30,6 +32,11 @@ class EmployeePage:
     last_name = (
         By.NAME,
         "lastName"
+    )
+
+    employee_id = (
+        By.XPATH,
+        "(//input[@class='oxd-input oxd-input--active'])[2]"
     )
 
     save_button = (
@@ -119,6 +126,10 @@ class EmployeePage:
                 9999
             )
 
+            timestamp_employee_id = str(
+                int(time.time())
+            )[-6:]
+
             first_name_input = self.wait.until(
                 EC.element_to_be_clickable(
                     self.first_name
@@ -139,7 +150,21 @@ class EmployeePage:
 
             last_name_input.clear()
 
-            last_name_input.send_keys("Kumar")
+            last_name_input.send_keys(
+                "Dusa"
+            )
+
+            employee_id_input = self.wait.until(
+                EC.element_to_be_clickable(
+                    self.employee_id
+                )
+            )
+
+            employee_id_input.clear()
+
+            employee_id_input.send_keys(
+                timestamp_employee_id
+            )
 
             logger.info(
                 "Employee Details Entered Successfully"

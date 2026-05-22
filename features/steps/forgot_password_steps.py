@@ -53,8 +53,6 @@ def step_impl(context):
 
     assert context.login.verify_reset_message()
 
-    logger.info("Reset Password Verified Successfully")
-
     context.driver.quit()
 
     logger.info("Browser Closed Successfully")

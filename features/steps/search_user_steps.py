@@ -63,7 +63,7 @@ def step_impl(context):
 
     assert context.search.verify_records()
 
-    logger.info("User Records Verified Successfully")
+    
 
     context.driver.quit()
 

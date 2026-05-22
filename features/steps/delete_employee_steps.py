@@ -72,7 +72,7 @@ def step_impl(context):
 
     assert context.delete.verify_delete_success()
 
-    logger.info("Employee Deleted Successfully")
+    
 
     context.driver.quit()
 
