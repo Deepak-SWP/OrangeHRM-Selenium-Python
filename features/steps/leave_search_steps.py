@@ -54,7 +54,7 @@ def step_impl(context):
 
     assert context.leave.verify_leave_records()
 
-    logger.info("Leave Records Verified Successfully")
+    
 
     context.driver.quit()
 

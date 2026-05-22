@@ -70,7 +70,7 @@ def step_impl(context):
 
     assert context.update.verify_update()
 
-    logger.info("Employee Updated Successfully")
+    
 
     context.driver.quit()
 

@@ -49,7 +49,7 @@ def step_impl(context):
 
     assert context.recruitment.verify_recruitment_page()
 
-    logger.info("Recruitment Page Verified Successfully")
+    
 
     context.driver.quit()
 

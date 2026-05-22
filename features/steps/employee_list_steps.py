@@ -54,7 +54,7 @@ def step_impl(context):
 
     assert context.employee.verify_employee_records()
 
-    logger.info("Employee Records Verified Successfully")
+   
 
     context.driver.quit()
 

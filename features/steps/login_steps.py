@@ -71,7 +71,7 @@ def step_impl(context):
 
     assert dashboard.verify_dashboard()
 
-    logger.info("Dashboard Verified Successfully")
+    
 
     context.driver.quit()
 

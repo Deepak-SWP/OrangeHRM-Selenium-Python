@@ -54,7 +54,7 @@ def step_impl(context):
 
     assert context.dashboard.verify_login_page()
 
-    logger.info("Login Page Verified Successfully")
+
 
     context.driver.quit()
 
