@@ -1,4 +1,4 @@
-````md
+![CI](https://github.com/Deepak-SWP/OrangeHRM-Selenium-Python/actions/workflows/python-app.yml/badge.svg)
 # ORANGEHRM SELENIUM PYTHON AUTOMATION FRAMEWORK
 
 A complete real-time Automation Testing Framework developed using Selenium WebDriver with Python to automate the OrangeHRM web application using industry-level automation practices.
