@@ -396,7 +396,7 @@ Terminal → New Terminal
 ## STEP 5 — ACTIVATE VIRTUAL ENVIRONMENT
 
 This project already contains virtual environment.
-
+(bash means in terminal)
 Run:
 
 ```bash
@@ -737,6 +737,7 @@ html-report/report.html
 # GENERATE ALLURE REPORT
 
 Generate:
+behave
 
 ```bash
 allure generate allure-results --clean -o allure-report

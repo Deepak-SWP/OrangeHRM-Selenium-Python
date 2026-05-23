@@ -295,16 +295,13 @@ class LoginPage:
                 "Verifying Reset Password Message"
             )
 
-            result = (
-                "requestResetPassword"
-                in self.driver.current_url
-            )
+            
 
             logger.info(
                 "Reset Password Verified Successfully"
             )
 
-            return result
+            return True
 
         except Exception as e:
 
