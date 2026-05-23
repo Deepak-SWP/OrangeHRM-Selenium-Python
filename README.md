@@ -342,7 +342,7 @@ This is the easiest and recommended method.
 Download:
 
 ```text
-OrangeHRM-Selenium-Python.zip
+https://drive.google.com/drive/folders/1BhhdCWzETgj1Ba-hNWNJmAKK6TTY_L-P?usp=drive_link
 ```
 
 ---
